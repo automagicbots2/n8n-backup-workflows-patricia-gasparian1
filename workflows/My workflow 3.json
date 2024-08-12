@@ -1,0 +1,265 @@
+{
+  "active": false,
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "telefone_active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_active": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-10T20:27:45.828Z",
+  "id": "xEBhPiCEuA4LOvTQ",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "My workflow 3",
+  "nodes": [
+    {
+      "parameters": {
+        "respondWith": "redirect",
+        "redirectURL": "www.globo.com",
+        "options": {}
+      },
+      "id": "c69618ba-6b31-47d2-ab5e-e2b6b0ab6b95",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1060,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "redirect",
+        "redirectURL": "www.google.com",
+        "options": {}
+      },
+      "id": "6c6ff6a2-09ef-4702-adb3-52f7418dac60",
+      "name": "Respond to Webhook1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1060,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "path": "recebe-telefone",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "6d1e42dd-5678-4e0f-b0d9-6625612962de",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -40,
+        220
+      ],
+      "webhookId": "84b54ab0-0944-4ada-a1a7-1743ef579411"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f1b91f68-443a-4ae7-9d46-7f92cc9756cd",
+              "name": "TELEFONE",
+              "value": "={{ $json[\"body\"][\"telefone\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "55bbf575-1eee-488b-8a89-78bfe3525614",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        140,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1-2H5aV6T18s4lMds96_VvbqT74LDZZmrLMLyX3H2dT8/edit",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1-2H5aV6T18s4lMds96_VvbqT74LDZZmrLMLyX3H2dT8/edit#gid=0"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "TELEFONE",
+              "lookupValue": "={{ $json[\"Telefone\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d078c83f-c725-4ef3-b350-a38929f5dc4c",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        560,
+        220
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0YSzQ2Z3Op1rzk4l",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "function formataTelefone(number) {\n    number = number.toString().replace(/[^\\d]/g, \"\")\n    let ddi = '55'\n    let ddd = number.substring(0, 2)\n\n    if (number.length == 13) {\n        let ddi = number.substring(0, 2)\n        let ddd = number.substring(2, 4)\n        return ddi + ddd + (ddd <= 28 ? number.substring(4, 13) : number.substring(4, 13))\n\n    } else if (number.length == 11) {\n        return ddi + ddd + (ddd <= 28 ? number.substring(2, 11) : number.substring(2, 11))\n\n    } else if (number.length == 10) {\n        return ddi + ddd + (ddd <= 28 ? '9' : '') + number.substring(2, 11)\n\n    } else if (number.length == 12) {\n        return number.substring(0, 2) == '55' ? number : (number.substring(0, 1) == '0' ? formataTelefone(number.substring(1, 12)) : number)\n\n    } else {\n        return number\n    }\n}\n\nreturn { Telefone : formataTelefone($input.all()[0].json['TELEFONE']) };"
+      },
+      "id": "470b7d8d-6cdf-4dbc-b936-e93bfbbce5e0",
+      "name": "telefone_active",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        340,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "ab42e73c-7526-4ad1-b2aa-07c42714dc03",
+              "leftValue": "={{ $json[\"TELEFONE\"] }}",
+              "rightValue": "={{ $json.TELEFONE }}",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "f164a630-e280-4358-a0cf-a9cd917da7a9",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        740,
+        220
+      ]
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "multiwebhook.patriciagasparian.com.br",
+            "user-agent": "WhatsApp/2.23.20.0",
+            "accept-encoding": "gzip",
+            "accept-language": "pt",
+            "x-forwarded-for": "191.254.136.220",
+            "x-forwarded-host": "multiwebhook.patriciagasparian.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "a20f8dd8ca0f",
+            "x-real-ip": "191.254.136.220"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "telefone": "5551981403175"
+          },
+          "webhookUrl": "https://multiwebhook.patriciagasparian.com.br/webhook/recebe-telefone",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-10T21:42:10.714Z",
+  "versionId": "a0ad03d9-60b9-4831-859f-ebc392fdd65f"
+}
