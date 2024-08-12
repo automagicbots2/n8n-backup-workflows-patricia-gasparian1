@@ -1,0 +1,375 @@
+{
+  "active": true,
+  "connections": {
+    "Lista Arquivos de 3 Dias Antes": {
+      "main": [
+        [
+          {
+            "node": "Deleta Arquivos de 3 Dias Antes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lista Workflows": {
+      "main": [
+        [
+          {
+            "node": "Unifica Dados",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Separa Workflows Individualmente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separa Workflows Individualmente": {
+      "main": [
+        [
+          {
+            "node": "Unifica Dados",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Unifica Dados": {
+      "main": [
+        [
+          {
+            "node": "Transforma em Dados Binários",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transforma em Dados Binários": {
+      "main": [
+        [
+          {
+            "node": "Upa no Drive",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Todo dia 8h": {
+      "main": [
+        [
+          {
+            "node": "Lista Workflows",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Lista Arquivos de 3 Dias Antes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-12T14:56:55.412Z",
+  "id": "Vc7ZYnUO5dR7R3Na",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Backup (12/08/24)",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "Quando o nó \"Move Binary Data\" está configurado para \"JSON to Binary\", ele está convertendo dados em formato JSON para dados binários. Isso é útil quando você precisa armazenar ou enviar dados em um formato que não é JSON, como um arquivo de imagem, áudio ou vídeo.\n\nPor exemplo, imagine que você tem um fluxo de trabalho que coleta dados de uma API e os armazena em um arquivo JSON. Usando o nó \"Move Binary Data\" configurado para \"JSON to Binary\", você pode converter esses dados em um arquivo de imagem e enviá-lo para um serviço de armazenamento de arquivos, como o Google Drive ou o Dropbox.\n\nÉ importante destacar que essa configuração específica requer que os dados de entrada estejam no formato JSON e que os dados convertidos sejam compatíveis com o tipo de arquivo que você está tentando criar, caso contrário, ocorrerá erro na conversão.",
+        "height": 875.1181102362207
+      },
+      "id": "a39db436-f967-4509-87d0-7de8ec967c14",
+      "name": "Sticky Note1",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "content": "O nó \"Merge\" no N8N é usado para combinar dois ou mais conjuntos de dados em um único conjunto de dados. Ele é útil quando você precisa combinar informações de várias fontes diferentes em um único fluxo de trabalho.",
+        "height": 387.6776154537772,
+        "width": 261.1653543307086
+      },
+      "id": "d6b33dca-6cf6-4ffd-9eae-194b941c902a",
+      "name": "Note3",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        140,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Pega todos os Workflow do N8N",
+        "height": 387.6776154537772,
+        "width": 261.1653543307086
+      },
+      "id": "bc7e9126-bd2b-4db4-8ae1-cef4431a7719",
+      "name": "Note4",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -640,
+        900
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Pega os Workflow do N8N individualmente",
+        "height": 387.6776154537772,
+        "width": 261.1653543307086
+      },
+      "id": "103914c0-545d-405a-9c30-601055cfe3c9",
+      "name": "Note5",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        1240
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Faz o upload para o Google Drive",
+        "height": 395.74060757976144,
+        "width": 261.1653543307086
+      },
+      "id": "eb71e6d6-9fda-49f2-a133-30b77b8f69f5",
+      "name": "Note6",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        740,
+        940
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Lista todos os arquivos com o nome | DATA BACKUP FLUXO N8N VARIAVEL \n\n\nVARIAVEL: {{new Date(new Date().setDate(new Date().getDate()-3)).toLocaleDateString('pt-BR', {year: \"numeric\", month: \"2-digit\", day: \"2-digit\"})}}\n\nPega o dia de hoje e diminui 3 dias\n\n\nResumindo: Pega os Workflow de tres dias atras e lista eles.",
+        "height": 546.9217099419659,
+        "width": 261.1653543307086
+      },
+      "id": "8cee7156-a06a-4e6f-a6d5-ea6357683bfd",
+      "name": "Note7",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "content": "Exclui os aquivos listados pegando o ID deles para a identificação exata.",
+        "height": 546.9217099419659,
+        "width": 261.1653543307086
+      },
+      "id": "ed649bab-6702-4e1f-8400-5dac6449beca",
+      "name": "Note8",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -320,
+        1680
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "list",
+        "limit": 200,
+        "queryFilters": {
+          "name": [
+            {
+              "value": "=| DATA BACKUP FLUXO N8N:{{new Date(new Date().setDate(new Date().getDate()-3)).toLocaleDateString('pt-BR', {year: \"numeric\", month: \"2-digit\", day: \"2-digit\"})}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Lista Arquivos de 3 Dias Antes",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        -540,
+        2020
+      ],
+      "typeVersion": 1,
+      "id": "23b82122-2a27-4252-b398-5d78a7bdc907",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "1flOlUHRTAfETvyL",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "delete",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json[\"id\"] }}",
+          "mode": "id"
+        }
+      },
+      "name": "Deleta Arquivos de 3 Dias Antes",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        -260,
+        2020
+      ],
+      "typeVersion": 1,
+      "id": "8a336f80-467a-4f2b-9072-17464178a070",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "1flOlUHRTAfETvyL",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "filters": {},
+        "requestOptions": {}
+      },
+      "id": "a2dacfa6-54a4-42ee-a9d4-da2cdffbf329",
+      "name": "Lista Workflows",
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        1120
+      ],
+      "credentials": {
+        "n8nApi": {
+          "id": "byPIy0fTwI5i9gDe",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "workflowId": {
+          "__rl": true,
+          "value": "={{$node[\"Lista Workflows\"].data[\"id\"]}}",
+          "mode": "id"
+        },
+        "requestOptions": {}
+      },
+      "id": "bc290e69-0027-4c85-b9f4-bef017896f69",
+      "name": "Separa Workflows Individualmente",
+      "type": "n8n-nodes-base.n8n",
+      "typeVersion": 1,
+      "position": [
+        -180,
+        1480
+      ],
+      "credentials": {
+        "n8nApi": {
+          "id": "byPIy0fTwI5i9gDe",
+          "name": "n8n account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "mergeByIndex"
+      },
+      "name": "Unifica Dados",
+      "type": "n8n-nodes-base.merge",
+      "position": [
+        220,
+        1140
+      ],
+      "typeVersion": 1,
+      "id": "b488cca7-75a1-4f31-b95a-e8371c34cbe3"
+    },
+    {
+      "parameters": {
+        "mode": "jsonToBinary",
+        "options": {
+          "useRawData": false
+        }
+      },
+      "name": "Transforma em Dados Binários",
+      "type": "n8n-nodes-base.moveBinaryData",
+      "position": [
+        520,
+        1140
+      ],
+      "typeVersion": 1,
+      "id": "3065272f-059c-4dbf-b726-06a309ab581f"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "binaryData": true,
+        "name": "={{$node[\"Unifica Dados\"].data[\"name\"]}} | DATA BACKUP FLUXO N8N:{{new Date(new Date().setDate(new Date().getDate())).toLocaleDateString('pt-BR', {year: \"numeric\", month: \"2-digit\", day: \"2-digit\"})}}.json",
+        "resolveData": true,
+        "parents": [
+          "1wbvrjAIOzw2n9zmR6W94tysKJWBInlIb"
+        ],
+        "options": {}
+      },
+      "name": "Upa no Drive",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        820,
+        1140
+      ],
+      "typeVersion": 1,
+      "id": "d4962643-babf-4d05-b2a7-c31eb5909f62",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "1flOlUHRTAfETvyL",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "hour": 1
+            }
+          ]
+        }
+      },
+      "name": "Todo dia 8h",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -880,
+        1120
+      ],
+      "typeVersion": 1,
+      "id": "016529c3-e1a8-4e4e-a4c6-3b94a4c716b4"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-12T16:08:24.397Z",
+  "versionId": "2131d7a5-b6ff-4e2a-a549-3144976156aa"
+}
