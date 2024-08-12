@@ -1,0 +1,681 @@
+{
+  "active": false,
+  "connections": {
+    "Trata dados": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "telefone_active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_active": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Date & Time1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields3": {
+      "main": [
+        [
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Trata dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-07-31T21:12:58.261Z",
+  "id": "drHd5I5I6yz1Xppe",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Ajuste data de criação e Telefone ✨",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "return typeof $node[\"Webhook\"].json[\"body\"] == 'string' ? JSON.parse($node[\"Webhook\"].json[\"body\"]) : $node[\"Webhook\"].json[\"body\"]\n"
+      },
+      "id": "058ef552-104f-442c-815a-bb8fe5c086aa",
+      "name": "Trata dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -60,
+        340
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $('Edit Fields').item.json['contact[fields][dados_data_da_criacao_do_contato]'] }}",
+        "format": "custom",
+        "customFormat": "dd/MM/yyyy",
+        "options": {}
+      },
+      "id": "2c6563cd-0c13-4911-956b-a1acf26f73fc",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        760,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "044545a7-771c-433c-9960-7fe68ac6834c",
+              "name": "ID_ACTIVE",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[id]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "af40a53a-59c5-4752-a518-ecce507e2a77",
+              "name": "NOME",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[first_name]\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}",
+              "type": "string"
+            },
+            {
+              "id": "82ed55cd-648a-4c66-8cd6-66eab97faee4",
+              "name": "EMAIL",
+              "value": "={{  $node[\"Trata dados\"].json[\"contact[email]\"].toLowerCase().replace(' ','') }}",
+              "type": "string"
+            },
+            {
+              "id": "f1b91f68-443a-4ae7-9d46-7f92cc9756cd",
+              "name": "TELEFONE",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[phone]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "e7b6a108-36af-42be-9ec4-9cbda2819f60",
+              "name": "SOBRENOME",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[last_name]\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}",
+              "type": "string"
+            },
+            {
+              "id": "3de998b4-eaa2-4cfc-9ec0-736f66060f89",
+              "name": "['contact[fields][dados_data_da_criacao_do_contato]']",
+              "value": "={{ $json['contact[fields][dados_data_da_criacao_do_contato]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "76395f70-f3d7-4092-958f-fa6194dcda28",
+              "name": "['contact[fields][dados_id_usuario]']",
+              "value": "={{ $json['contact[fields][dados_id_usuario]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "794a34fe-bd57-41f6-bef2-251dab4d00e8",
+              "name": "['contact[fields][dados_id_active]']",
+              "value": "={{ $json['contact[fields][dados_id_active]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "961c1d4e-c38c-410c-8905-753783dcfae2",
+              "name": "['contact[fields][dados_id_manychat]']",
+              "value": "={{ $json['contact[fields][dados_id_manychat]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "e9c2b29f-8f57-4fdb-82be-250b06318776",
+              "name": "['contact[fields][dados_id_crm]']",
+              "value": "={{ $json['contact[fields][dados_id_crm]'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "53d8cc6b-3d55-44dc-8f54-21bbfce12000",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        140,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $json[\"ID_ACTIVE\"] }}",
+        "updateFields": {
+          "fieldValues": {
+            "property": [
+              {
+                "field": "17",
+                "value": "=M{{ $node[\"Edit Fields1\"].json[\"ID_ACTIVE\"] }}"
+              },
+              {
+                "field": "18",
+                "value": "={{ $node[\"Edit Fields1\"].json[\"ID_ACTIVE\"] }}"
+              }
+            ]
+          },
+          "email": "={{ $json[\"EMAIL\"] }}",
+          "firstName": "={{ $json[\"NOME\"] }}",
+          "lastName": "={{ $json[\"SOBRENOME\"] }}",
+          "phone": "=+{{ $node[\"telefone_active\"].json[\"Telefone\"] }}"
+        }
+      },
+      "id": "eb958611-2d88-47ac-a2fd-9a58a2cbe0f8",
+      "name": "ActiveCampaign",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        440
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "function formataTelefone(number) {\n    number = number.toString().replace(/[^\\d]/g, \"\")\n    let ddi = '55'\n    let ddd = number.substring(0, 2)\n\n    if (number.length == 13) {\n        let ddi = number.substring(0, 2)\n        let ddd = number.substring(2, 4)\n        return ddi + ddd + (ddd <= 28 ? number.substring(4, 13) : number.substring(5, 13))\n\n    } else if (number.length == 11) {\n        return ddi + ddd + (ddd <= 28 ? number.substring(2, 11) : number.substring(3, 11))\n\n    } else if (number.length == 10) {\n        return ddi + ddd + (ddd <= 28 ? '9' : '') + number.substring(2, 11)\n\n    } else if (number.length == 12) {\n        return number.substring(0, 2) == '55' ? number : (number.substring(0, 1) == '0' ? formataTelefone(number.substring(1, 12)) : number)\n\n    } else {\n        return number\n    }\n}\n\nreturn { Telefone : formataTelefone($input.all()[0].json['TELEFONE']) };"
+      },
+      "id": "438d505d-5363-4cbb-b156-ba6d0ae7071f",
+      "name": "telefone_active",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        340,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5c5808c3-0004-4f30-bb5d-01cad773b044",
+              "name": "ID_ACTIVE",
+              "value": "={{ $('Edit Fields').item.json.ID_ACTIVE }}",
+              "type": "string"
+            },
+            {
+              "id": "7518d761-b733-48e2-9fa4-73fda66a54f4",
+              "name": "NOME",
+              "value": "={{ $('Edit Fields').item.json.NOME }}",
+              "type": "string"
+            },
+            {
+              "id": "a76d4aa6-528a-4e61-84db-4aee36ed67af",
+              "name": "EMAIL",
+              "value": "={{ $('Edit Fields').item.json.EMAIL }}",
+              "type": "string"
+            },
+            {
+              "id": "4a292451-521a-401c-9ba4-ab6fb8d3479c",
+              "name": "TELEFONE",
+              "value": "=+{{ $node[\"telefone_active\"].json[\"Telefone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "bbc2ece4-1ede-436f-beee-b40382a97008",
+              "name": "SOBRENOME",
+              "value": "={{ $('Edit Fields').item.json.SOBRENOME }}",
+              "type": "string"
+            },
+            {
+              "id": "6b9dde54-4e38-48a4-b552-6c57f5cc8247",
+              "name": "['contact[fields][dados_data_da_criacao_do_contato]']",
+              "value": "={{ $json[\"formattedDate\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "41ee4095-b5c7-46cb-abdb-070a9a950ffa",
+              "name": "['contact[fields][dados_id_usuario]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_usuario]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "8e5fa564-1436-4112-88e1-3ae7b9bac57c",
+              "name": "['contact[fields][dados_id_active]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_active]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "87171d1b-591a-436a-b0ba-f07f032b15b7",
+              "name": "['contact[fields][dados_id_manychat]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_manychat]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "28fde9d0-aab4-466d-9a21-1d79796dbc7e",
+              "name": "['contact[fields][dados_id_crm]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_crm]'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a06aab3e-a331-402d-aeaa-b6413b6b026c",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        960,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "051b1e18-b2bf-4832-8b3e-2dae3902ef6b",
+              "leftValue": "={{ $json[\"contact[fields][dados_id_usuario]\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "5539f047-ff04-4195-a766-3fc78801c06f",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1140,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "051b1e18-b2bf-4832-8b3e-2dae3902ef6b",
+              "leftValue": "={{ $node[\"Edit Fields\"].json[\"contact[fields][dados_data_da_criacao_do_contato]\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            },
+            {
+              "id": "55ab76f7-1e12-4bfc-a365-87bc352ef1f1",
+              "leftValue": "={{ $node[\"Webhook\"].json[\"body\"][\"contact[fields][data_de_entrada]\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "eb3fbceb-a116-4d02-be09-b84767888093",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        520,
+        340
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ff805ba1-ef47-46e0-96db-87d6c6e80c67",
+              "name": "[\"contact[fields][dados_data_da_criacao_do_contato]\"]",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"contact[fields][data_de_entrada]\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "81e62d9d-7b00-45fb-9c59-6f398485af1a",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        760,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $json[\"contact[fields][dados_data_da_criacao_do_contato]\"] }}",
+        "format": "custom",
+        "customFormat": "dd/MM/yyyy",
+        "options": {}
+      },
+      "id": "1990ed5d-4286-4822-8663-ba4140ff56bd",
+      "name": "Date & Time1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        940,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $json[\"ID_ACTIVE\"] }}",
+        "updateFields": {
+          "fieldValues": {
+            "property": [
+              {
+                "field": "17",
+                "value": "=M{{ $node[\"Edit Fields3\"].json[\"ID_ACTIVE\"] }}"
+              },
+              {
+                "field": "18",
+                "value": "={{ $node[\"Edit Fields3\"].json[\"ID_ACTIVE\"] }}"
+              },
+              {
+                "field": "9",
+                "value": "={{ $json[\"contact[fields][dados_data_da_criacao_do_contato]\"] }}"
+              }
+            ]
+          },
+          "email": "={{ $json[\"EMAIL\"] }}",
+          "firstName": "={{ $json[\"NOME\"] }}",
+          "lastName": "={{ $json[\"SOBRENOME\"] }}",
+          "phone": "=+{{ $node[\"telefone_active\"].json[\"Telefone\"] }}"
+        }
+      },
+      "id": "51af455c-4748-4cf6-9479-98b2ad6d5ad1",
+      "name": "ActiveCampaign1",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        240
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "5c5808c3-0004-4f30-bb5d-01cad773b044",
+              "name": "ID_ACTIVE",
+              "value": "={{ $('Edit Fields').item.json.ID_ACTIVE }}",
+              "type": "string"
+            },
+            {
+              "id": "7518d761-b733-48e2-9fa4-73fda66a54f4",
+              "name": "NOME",
+              "value": "={{ $('Edit Fields').item.json.NOME }}",
+              "type": "string"
+            },
+            {
+              "id": "a76d4aa6-528a-4e61-84db-4aee36ed67af",
+              "name": "EMAIL",
+              "value": "={{ $('Edit Fields').item.json.EMAIL }}",
+              "type": "string"
+            },
+            {
+              "id": "4a292451-521a-401c-9ba4-ab6fb8d3479c",
+              "name": "TELEFONE",
+              "value": "=+{{ $node[\"telefone_active\"].json[\"Telefone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "bbc2ece4-1ede-436f-beee-b40382a97008",
+              "name": "SOBRENOME",
+              "value": "={{ $('Edit Fields').item.json.SOBRENOME }}",
+              "type": "string"
+            },
+            {
+              "id": "6b9dde54-4e38-48a4-b552-6c57f5cc8247",
+              "name": "['contact[fields][dados_data_da_criacao_do_contato]']",
+              "value": "={{ $json[\"formattedDate\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "41ee4095-b5c7-46cb-abdb-070a9a950ffa",
+              "name": "['contact[fields][dados_id_usuario]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_usuario]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "8e5fa564-1436-4112-88e1-3ae7b9bac57c",
+              "name": "['contact[fields][dados_id_active]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_active]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "87171d1b-591a-436a-b0ba-f07f032b15b7",
+              "name": "['contact[fields][dados_id_manychat]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_manychat]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "28fde9d0-aab4-466d-9a21-1d79796dbc7e",
+              "name": "['contact[fields][dados_id_crm]']",
+              "value": "={{ $('Edit Fields').item.json['contact[fields][dados_id_crm]'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "17eb852b-a833-45a3-bc10-b813afbb2ff5",
+      "name": "Edit Fields3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1120,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "051b1e18-b2bf-4832-8b3e-2dae3902ef6b",
+              "leftValue": "={{ $json[\"contact[fields][dados_id_usuario]\"] }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "4901e12a-a2d1-408b-8231-c35532180346",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1300,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "data_criacao",
+        "options": {}
+      },
+      "id": "ef293245-47ea-43fc-90d8-feacede565be",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        340
+      ],
+      "webhookId": "eda1344a-8df8-4379-b900-b688752acbfd"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-10T15:22:50.812Z",
+  "versionId": "fba78889-c78e-4f6a-a202-379e0d685a4f"
+}
