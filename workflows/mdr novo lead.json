@@ -1,0 +1,37 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2024-07-10T13:24:54.259Z",
+  "id": "iZuq3igdBlCEA2gy",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "mdr novo lead",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mdr-novo-lead",
+        "options": {}
+      },
+      "id": "95789388-c0ac-4cbe-9f49-77f3fd52fceb",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        500,
+        340
+      ],
+      "webhookId": "c4f6215b-3ee7-4c77-b28b-a11274b40d7d"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-07-10T22:39:45.738Z",
+  "versionId": "933220c4-b631-4cc9-a882-05146b8e19df"
+}
