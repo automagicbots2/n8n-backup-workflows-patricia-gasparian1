@@ -1,0 +1,1754 @@
+{
+  "active": true,
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "encontra_lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign1": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "encontra_lead1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clint1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "encontra_lead1": {
+      "main": [
+        [
+          {
+            "node": "clint1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign3": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign4": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "encontra_lead": {
+      "main": [
+        [
+          {
+            "node": "cadastra-audiencia2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cadastra-audiencia2": {
+      "main": [
+        [
+          {
+            "node": "clint",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "clint": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-07-08T16:28:34.734Z",
+  "id": "FHCWjE0TVRwNsYWR",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[MDR] Cadastro",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "function formataTelefone(number) {\n    number = number.toString().replace(/[^\\d]/g, \"\");\n    let ddi = '55';\n    let ddd = number.substring(0, 2);\n\n    if (number.length == 13) {\n        ddi = number.substring(0, 2);\n        ddd = number.substring(2, 4);\n        return ddi + ddd + (ddd <= 28 ? number.substring(4, 13) : number.substring(5, 13));\n\n    } else if (number.length == 11) {\n        return ddi + ddd + (ddd <= 28 ? number.substring(2, 11) : number.substring(3, 11));\n\n    } else if (number.length == 10) {\n        return ddi + ddd + (ddd <= 28 ? '9' : '') + number.substring(2, 10);\n\n    } else if (number.length == 12) {\n        return number.substring(0, 2) == '55' ? number : (number.substring(0, 1) == '0' ? formataTelefone(number.substring(1, 12)) : number);\n\n    } else {\n        return number;\n    }\n}\n\n// Obtém o número do WhatsApp do input\nconst whatsappNumber = $json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu número do Whatsapp?\"];\n\nreturn [{ Telefone: formataTelefone(whatsappNumber) }];\n"
+      },
+      "id": "4a33af34-69ca-4bc4-a2a6-2e45ddd92877",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -60,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "formulario",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"form\"][\"form_name\"] }}"
+            },
+            {
+              "name": "Nome",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu nome?\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}"
+            },
+            {
+              "name": "Email",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu melhor e-mail?\"] }}"
+            },
+            {
+              "name": "Whatsapp",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu número do Whatsapp?\"].replace(' ','') }}"
+            },
+            {
+              "name": "Possui renda ativa",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você possui renda ativa?\"] }}"
+            },
+            {
+              "name": "Como estao as suas contas",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Como estão as suas contas? Você consegue fazer sobrar todo o mês ou o seu dinheiro vive sumindo?\"] }}"
+            },
+            {
+              "name": "Mantem um sistema de controle de gastos",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você mantém um sistema de controle de gastos?\"] }}"
+            },
+            {
+              "name": "Tem uma reserva da paz",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você tem uma reserva da paz?\"] }}"
+            },
+            {
+              "name": "Investe",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você já investe?\"] }}"
+            },
+            {
+              "name": "Buscou ajuda para lidar com os desafios financeiros",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você já buscou algum tipo de ajuda ou suporte para lidar com os seus desafios financeiros?\"] }}"
+            },
+            {
+              "name": "O que esta buscando",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"O que você está buscando para a sua vida nesse momento?\"] }}"
+            },
+            {
+              "name": "Quais dificuldades para alcancar os objetivos",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Quais dificuldades te impediram de alcançar os seus objetivos?\"] }}"
+            },
+            {
+              "name": "Por que acredita que a Itala pode te ajudar",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Por que você acredita que a Ítala pode te ajudar?\"] }}"
+            },
+            {
+              "name": "O que acha que vai mudar na sua vida apos a ajuda da Itala",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"O que você acha que vai mudar na sua vida após a ajuda da Ítala?\"] }}"
+            },
+            {
+              "name": "remetente",
+              "stringValue": "Patricia"
+            },
+            {
+              "name": "telefoneauxiliar",
+              "stringValue": "555181598371"
+            },
+            {
+              "name": "utm_source",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"respondent_utms\"][\"utm_source\"] }}"
+            },
+            {
+              "name": "utm_medium",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"respondent_utms\"][\"utm_medium\"] }}"
+            },
+            {
+              "name": "utm_campaign",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"respondent_utms\"][\"utm_campaign\"] }}"
+            },
+            {
+              "name": "utm_content",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"respondent_utms\"][\"utm_content\"] }}"
+            },
+            {
+              "name": "utm_term",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"respondent_utms\"][\"utm_term\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "51275337-7724-4a3d-9b0e-70fba4b0dec8",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        640,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"date\"] }}",
+        "format": "custom",
+        "customFormat": "dd/MM/yyyy HH:mm",
+        "outputFieldName": "data",
+        "options": {}
+      },
+      "id": "db7e1b64-b25e-4182-9fe2-7bb799122826",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        140,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/get_by_phone/+557381792482",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f5a32b12-370d-4ebd-ba8b-d19f7f24c19a",
+      "name": "encontra_remetente,1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1300,
+        -180
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "requestMethod": "=POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"encontra_lead\"].json[\"id\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=    \"data\": {{ $('Edit Fields').item.json[\"data\"] }},\n    \"formulario\": {{ $('Edit Fields').item.json[\"formulario\"] }},\n    \"nome\": {{ $('Edit Fields').item.json[\"nome\"] }},\n    \"telefone\": {{ $('Edit Fields').item.json[\"telefone\"] }},\n    \"email\": {{ $('Edit Fields').item.json[\"email\"] }},\n    \"renda\": {{ $('Edit Fields').item.json[\"renda\"] }},\n    \"contas\": {{ $('Edit Fields').item.json[\"contas\"] }},\n    \"controle\": {{ $('Edit Fields').item.json[\"controle\"] }},\n    \"paz\": {{ $('Edit Fields').item.json[\"paz\"] }},\n    \"investimento\": {{ $('Edit Fields').item.json[\"investimento\"] }},\n    \"alcance\": {{ $('Edit Fields').item.json[\"alcance\"] }},\n    \"busca\": {{ $('Edit Fields').item.json[\"busca\"] }},\n    \"dificuldades\": {{ $('Edit Fields').item.json[\"dificuldades\"] }},\n    \"ajuda\": {{ $('Edit Fields').item.json[\"ajuda\"] }},\n    \"mudança\": {{ $('Edit Fields').item.json[\"mudança\"] }}\n "
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        }
+      },
+      "name": "envia_whatsapp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        -200
+      ],
+      "id": "448e22ec-e380-4a61-b4e8-c45f800a8f0a",
+      "disabled": true,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "content": "## TROCAR CÓDIGO DOS FORMULARIOS",
+        "height": 410
+      },
+      "id": "a6c3e658-21dd-4e49-817b-e9bafae1bdba",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        280,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"cadastra-audiencia2\"].json[\"id\"] }}/send_flow/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow",
+              "value": "3295916"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "52aec9a5-ee93-4bda-96a0-86d8164d902e",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "email": "patgas1970@gmail.com",
+        "updateIfExists": true,
+        "additionalFields": {
+          "firstName": "={{ $node[\"Edit Fields\"].json[\"Nome\"].split(' ')[0] }}",
+          "lastName": "={{ $node[\"Edit Fields\"].json[\"Nome\"].split(' ')[1] }}",
+          "phone": "={{ $node[\"Edit Fields\"].json[\"Whatsapp\"].replace(' ','') }}"
+        }
+      },
+      "id": "93226972-9a33-40b0-8a2b-ad3ced0a2820",
+      "name": "ActiveCampaign",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        240
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactList",
+        "listId": 56,
+        "contactId": "={{ $json[\"id\"] }}"
+      },
+      "id": "5c543aed-22e7-44b1-983c-56fafb637408",
+      "name": "ActiveCampaign1",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        240
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactTag",
+        "tagId": "4461",
+        "contactId": "={{ $node[\"ActiveCampaign\"].json[\"id\"] }}"
+      },
+      "id": "9b7d64d8-225b-41da-9770-8fc6e8f7e749",
+      "name": "ActiveCampaign2",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        240
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "formulario",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"form\"][\"form_name\"] }}"
+            },
+            {
+              "name": "Nome",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu nome?\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}"
+            },
+            {
+              "name": "Whatsapp",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu número do Whatsapp?\"] }}"
+            },
+            {
+              "name": "Email",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu melhor e-mail?\"] }}"
+            },
+            {
+              "name": "Possui renda ativa",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você possui renda ativa?\"] }}"
+            },
+            {
+              "name": "Como estao as suas contas",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Como estão as suas contas? Você consegue fazer sobrar todo o mês ou o seu dinheiro vive sumindo?\"] }}"
+            },
+            {
+              "name": "Mantem um sistema de controle de gastos",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você mantém um sistema de controle de gastos?\"] }}"
+            },
+            {
+              "name": "Tem uma reserva da paz",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você tem uma reserva da paz?\"] }}"
+            },
+            {
+              "name": "Investe",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você já investe?\"] }}"
+            },
+            {
+              "name": "Buscou ajuda para lidar com os desafios financeiros",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Você já buscou algum tipo de ajuda ou suporte para lidar com os seus desafios financeiros?\"] }}"
+            },
+            {
+              "name": "O que esta buscando",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"O que você está buscando para a sua vida nesse momento?\"] }}"
+            },
+            {
+              "name": "Quais dificuldades para alcancar os objetivos",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Quais dificuldades te impediram de alcançar os seus objetivos?\"] }}"
+            },
+            {
+              "name": "Por que acredita que a Itala pode te ajudar",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Por que você acredita que a Ítala pode te ajudar?\"] }}"
+            },
+            {
+              "name": "O que acha que vai mudar na sua vida apos a ajuda da Itala",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"O que você acha que vai mudar na sua vida após a ajuda da Ítala?\"] }}"
+            },
+            {
+              "name": "remetente",
+              "stringValue": "Patricia"
+            },
+            {
+              "name": "telefoneauxiliar",
+              "stringValue": "555181598371"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c3615b07-87e8-40ed-88df-031f33aafd6c",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        640,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/b5c5e338-fec9-4c58-a9c3-f79a228a0c00",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Nome\"] }}"
+            },
+            {
+              "name": "whatsapp",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Whatsapp\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Email\"] }}"
+            },
+            {
+              "name": "Possui renda ativa",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Possui renda ativa\"] }}"
+            },
+            {
+              "name": "Como estao as suas contas",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Como estao as suas contas\"] }}"
+            },
+            {
+              "name": "Mantem um sistema de controle de gastos",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Mantem um sistema de controle de gastos\"] }}"
+            },
+            {
+              "name": "Tem uma reserva da paz",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Tem uma reserva da paz\"] }}"
+            },
+            {
+              "name": "Investe",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Investe\"] }}"
+            },
+            {
+              "name": "Buscou ajuda para lidar com os desafios financeiros",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Buscou ajuda para lidar com os desafios financeiros\"] }}"
+            },
+            {
+              "name": "O que esta buscando",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"O que esta buscando\"] }}"
+            },
+            {
+              "name": "Quais dificuldades para alcancar os objetivos",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Quais dificuldades para alcancar os objetivos\"] }}"
+            },
+            {
+              "name": "Por que acredita que a Itala pode te ajudar",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"Por que acredita que a Itala pode te ajudar\"] }}"
+            },
+            {
+              "name": "O que acha que vai mudar na sua vida apos a ajuda da Itala",
+              "value": "={{ $node[\"Edit Fields1\"].json[\"O que acha que vai mudar na sua vida apos a ajuda da Itala\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6e9b7930-a35c-49d7-955d-16a2c251bd32",
+      "name": "clint1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1000,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/get_by_phone/+{{ $json[\"telefoneauxiliar\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f2e2c7e9-8fb9-423d-ae3e-ef2de9dc9794",
+      "name": "encontra_lead1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        820,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"encontra_lead1\"].json[\"id\"] }}/send_flow/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow",
+              "value": "3295916"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f374a45f-87e5-4513-a89c-9fdd0ee96224",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1400,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "email": "patgas1970@gmail.com",
+        "updateIfExists": true,
+        "additionalFields": {
+          "firstName": "={{ $node[\"Edit Fields1\"].json[\"Nome\"].split(' ')[0] }}",
+          "lastName": "={{ $node[\"Edit Fields1\"].json[\"Nome\"].split(' ')[1] }}",
+          "phone": "={{ $node[\"Edit Fields1\"].json[\"Whatsapp\"].replace(' ','') }}"
+        }
+      },
+      "id": "ca72be45-3b78-4576-820d-9d7519fb133b",
+      "name": "ActiveCampaign3",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        400
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactList",
+        "listId": 56,
+        "contactId": "={{ $json[\"id\"] }}"
+      },
+      "id": "e50b5adf-7294-43e8-9672-a5fd31e3c114",
+      "name": "ActiveCampaign4",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1760,
+        400
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactTag",
+        "tagId": "4461",
+        "contactId": "={{ $node[\"ActiveCampaign3\"].json[\"id\"] }}"
+      },
+      "id": "d71b4ec7-4f48-4aa3-b79f-6668ab8eba28",
+      "name": "ActiveCampaign5",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        400
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $node[\"Webhook\"].json[\"body\"][\"form\"][\"form_id\"] }}",
+        "rules": {
+          "rules": [
+            {
+              "operation": "contains",
+              "value2": "=ZiVdLyUq",
+              "outputKey": "0"
+            },
+            {
+              "operation": "contains",
+              "value2": "={{ $node[\"Webhook\"].json[\"body\"][\"form\"][\"form_id\"] }}",
+              "outputKey": "1"
+            }
+          ]
+        }
+      },
+      "id": "ce3ad194-e73e-41ac-8c1c-12ee26b1c7ed",
+      "name": "Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        340,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1JYrzwGVXjvWrp8l9-ZsqcT8HXrvEOBsrdVE6ffVHeH8/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JYrzwGVXjvWrp8l9-ZsqcT8HXrvEOBsrdVE6ffVHeH8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "EMAIL"
+          ],
+          "schema": [
+            {
+              "id": "DATA CADASTRO",
+              "displayName": "DATA CADASTRO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NOME",
+              "displayName": "NOME",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "SOBRENOME",
+              "displayName": "SOBRENOME",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "EMAIL",
+              "displayName": "EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TELEFONE",
+              "displayName": "TELEFONE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "NOVO LEAD",
+              "displayName": "NOVO LEAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "RAPPORT",
+              "displayName": "RAPPORT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "DESCOBERTA",
+              "displayName": "DESCOBERTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ENCANTAMENTO",
+              "displayName": "ENCANTAMENTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "FECHAMENTO",
+              "displayName": "FECHAMENTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "EM TAREFA",
+              "displayName": "EM TAREFA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "CONCLUIDO",
+              "displayName": "CONCLUIDO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "accc944f-844a-49e8-b074-37aa4438ca13",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        2300,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0YSzQ2Z3Op1rzk4l",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "eb2519a2-973d-4729-8b35-19fbbd769b66",
+              "name": "DATA CADASTRO",
+              "value": "={{ $node[\"Date & Time\"].json[\"data\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "22fcc86f-4c24-4e68-8142-c5d8c4bdb4af",
+              "name": "NOME",
+              "value": "={{ $node[\"ActiveCampaign\"].json[\"firstName\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "582ddb9a-8067-4256-a996-853b0aea8508",
+              "name": "SOBRENOME",
+              "value": "={{ $node[\"ActiveCampaign\"].json[\"lastName\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "e419d69d-9cdc-476e-a404-f21e1ff1eb85",
+              "name": "EMAIL",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu melhor e-mail?\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "1bbd4be4-5f7d-4a69-9a84-c7fa47a7baea",
+              "name": "TELEFONE",
+              "value": "={{ $node[\"ActiveCampaign\"].json[\"phone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "606ed9c6-81d5-4439-b518-ffc03881cd53",
+              "name": "NOVO LEAD",
+              "value": "={{ $node[\"Date & Time\"].json[\"data\"].split(' ')[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "f2275f09-1f5c-4e45-94e6-db5b879ad182",
+              "name": "",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a410d6d6-eee4-4b27-b06b-e84dc87c253d",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2120,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $node[\"ActiveCampaign\"].json[\"id\"] }}",
+        "updateFields": {
+          "fieldValues": {
+            "property": [
+              {
+                "field": "1",
+                "value": "={{ $node[\"Edit Fields\"].json[\"utm_source\"] }}"
+              },
+              {
+                "field": "2",
+                "value": "={{ $node[\"Edit Fields\"].json[\"utm_medium\"] }}"
+              },
+              {
+                "field": "3",
+                "value": "={{ $node[\"Edit Fields\"].json[\"utm_campaign\"] }}"
+              },
+              {
+                "field": "4",
+                "value": "={{ $node[\"Edit Fields\"].json[\"utm_content\"] }}"
+              },
+              {
+                "field": "5",
+                "value": "={{ $node[\"Edit Fields\"].json[\"utm_term\"] }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "a4eaf713-b785-4bbb-bffb-221f9245d694",
+      "name": "ActiveCampaign6",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        240
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1JYrzwGVXjvWrp8l9-ZsqcT8HXrvEOBsrdVE6ffVHeH8/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1JYrzwGVXjvWrp8l9-ZsqcT8HXrvEOBsrdVE6ffVHeH8/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [
+            "EMAIL"
+          ],
+          "schema": [
+            {
+              "id": "DATA CADASTRO",
+              "displayName": "DATA CADASTRO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "NOME",
+              "displayName": "NOME",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "SOBRENOME",
+              "displayName": "SOBRENOME",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "EMAIL",
+              "displayName": "EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TELEFONE",
+              "displayName": "TELEFONE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "NOVO LEAD",
+              "displayName": "NOVO LEAD",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "RAPPORT",
+              "displayName": "RAPPORT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "DESCOBERTA",
+              "displayName": "DESCOBERTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ENCANTAMENTO",
+              "displayName": "ENCANTAMENTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "FECHAMENTO",
+              "displayName": "FECHAMENTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "EM TAREFA",
+              "displayName": "EM TAREFA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "CONCLUIDO",
+              "displayName": "CONCLUIDO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "UTM SOURCE",
+              "displayName": "UTM SOURCE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM MEDIUM",
+              "displayName": "UTM MEDIUM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM CAMPAIGN",
+              "displayName": "UTM CAMPAIGN",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM CONTENT",
+              "displayName": "UTM CONTENT",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "UTM TERM",
+              "displayName": "UTM TERM",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f7823f67-27c2-46e8-945b-f50ef1c59603",
+      "name": "Google Sheets1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        2680,
+        240
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0YSzQ2Z3Op1rzk4l",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://functions-api.clint.digital/endpoints/integration/webhook/b5c5e338-fec9-4c58-a9c3-f79a228a0c00",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "nome",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Nome\"] }}"
+            },
+            {
+              "name": "whatsapp",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Whatsapp\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Email\"] }}"
+            },
+            {
+              "name": "Possui renda ativa",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Possui renda ativa\"] }}"
+            },
+            {
+              "name": "Como estao as suas contas",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Como estao as suas contas\"] }}"
+            },
+            {
+              "name": "Mantem um sistema de controle de gastos",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Mantem um sistema de controle de gastos\"] }}"
+            },
+            {
+              "name": "Tem uma reserva da paz",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Tem uma reserva da paz\"] }}"
+            },
+            {
+              "name": "Investe",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Investe\"] }}"
+            },
+            {
+              "name": "Buscou ajuda para lidar com os desafios financeiros",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Buscou ajuda para lidar com os desafios financeiros\"] }}"
+            },
+            {
+              "name": "O que esta buscando",
+              "value": "={{ $node[\"Edit Fields\"].json[\"O que esta buscando\"] }}"
+            },
+            {
+              "name": "Quais dificuldades para alcancar os objetivos",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Quais dificuldades para alcancar os objetivos\"] }}"
+            },
+            {
+              "name": "Por que acredita que a Itala pode te ajudar",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Por que acredita que a Itala pode te ajudar\"] }}"
+            },
+            {
+              "name": "O que acha que vai mudar na sua vida apos a ajuda da Itala",
+              "value": "={{ $node[\"Edit Fields\"].json[\"O que acha que vai mudar na sua vida apos a ajuda da Itala\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "bdf9a90e-d063-4e2c-96fa-53d1bab0fc3f",
+      "name": "clint",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1180,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/get_by_phone/+{{ $json[\"Whatsapp\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cda75c57-d4c2-4ba4-94eb-c96c76208711",
+      "name": "encontra_lead",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        820,
+        240
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "requestMethod": "=POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/{{ $node[\"encontra_lead\"].json[\"id\"] }}/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=    \"data\": {{ $('Edit Fields').item.json[\"data\"] }},\n    \"formulario\": {{ $('Edit Fields').item.json[\"formulario\"] }},\n    \"nome\": {{ $('Edit Fields').item.json[\"nome\"] }},\n    \"telefone\": {{ $('Edit Fields').item.json[\"telefone\"] }},\n    \"email\": {{ $('Edit Fields').item.json[\"email\"] }},\n    \"renda\": {{ $('Edit Fields').item.json[\"renda\"] }},\n    \"contas\": {{ $('Edit Fields').item.json[\"contas\"] }},\n    \"controle\": {{ $('Edit Fields').item.json[\"controle\"] }},\n    \"paz\": {{ $('Edit Fields').item.json[\"paz\"] }},\n    \"investimento\": {{ $('Edit Fields').item.json[\"investimento\"] }},\n    \"alcance\": {{ $('Edit Fields').item.json[\"alcance\"] }},\n    \"busca\": {{ $('Edit Fields').item.json[\"busca\"] }},\n    \"dificuldades\": {{ $('Edit Fields').item.json[\"dificuldades\"] }},\n    \"ajuda\": {{ $('Edit Fields').item.json[\"ajuda\"] }},\n    \"mudança\": {{ $('Edit Fields').item.json[\"mudança\"] }}\n "
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        }
+      },
+      "name": "cadastra_audinecia",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        820,
+        -200
+      ],
+      "id": "6e525c5a-6e28-4511-8cc7-06f15c2254c4",
+      "disabled": true,
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "API-KEY",
+              "value": "cc6bf801-af84-4c8d-a07a-1b77494d904f"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "phone",
+              "value": "={{ $node[\"Edit Fields\"].json[\"Whatsapp\"] }}"
+            },
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"respondent\"][\"answers\"][\"Qual o seu nome?\"] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "40c09ab0-09e4-49d3-82ec-b46165c72fda",
+      "name": "cadastra-audiencia2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1000,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "respondi",
+        "options": {}
+      },
+      "id": "43b81989-c1b3-472d-b54c-002135098320",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        400
+      ],
+      "webhookId": "4cd7c766-820c-4f88-b445-e006d715c4a7"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "multiwebhook.patriciagasparian.com.br",
+            "user-agent": "GuzzleHttp/7",
+            "content-length": "4333",
+            "content-type": "application/json",
+            "traceparent": "00-66a7700200000000602492fc56c42268-6ccf4c3ed2528c74-01",
+            "tracestate": "dd=p:6ccf4c3ed2528c74;t.dm:-1",
+            "x-datadog-parent-id": "7840569308975631476",
+            "x-datadog-sampling-priority": "1",
+            "x-datadog-tags": "_dd.p.tid=66a7700200000000,_dd.p.dm=-1",
+            "x-datadog-trace-id": "6927823739287773800",
+            "x-forwarded-for": "35.171.21.112",
+            "x-forwarded-host": "multiwebhook.patriciagasparian.com.br",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "a20f8dd8ca0f",
+            "x-real-ip": "35.171.21.112",
+            "accept-encoding": "gzip"
+          },
+          "params": {},
+          "query": {},
+          "body": {
+            "form": {
+              "form_name": "2024.07 [MDR] UTMs - Ficha Interesse",
+              "form_id": "vSlFGtin"
+            },
+            "respondent": {
+              "status": "completed",
+              "date": "2024-07-29 10:30:41",
+              "score": null,
+              "respondent_id": "aa96b1e0-9f94-4670-af5c-f59085fe3fab",
+              "answers": {
+                "Qual o seu nome?": "Maria Angélica",
+                "Qual o seu número do Whatsapp?": "55 15992434141",
+                "{{x3izmoczgl2f}}, o seu número do whats está correto?": "Sim",
+                "Qual o seu melhor e-mail?": "angelicasz@hotmail.com",
+                "{{x3ndhuaywqbd}}, o seu e-mail está correto?": "Sim",
+                "Você possui renda ativa?": "Sim - Entre 3 e 6 mil reais",
+                "Como estão as suas contas? Você consegue fazer sobrar todo o mês ou o seu dinheiro vive sumindo?": "Sim",
+                "Você mantém um sistema de controle de gastos?": "Sim",
+                "Você tem uma reserva da paz?": "Sim",
+                "Você já investe?": "Sim - Entre 100 e 500 mil",
+                "Você já buscou algum tipo de ajuda ou suporte para lidar com os seus desafios financeiros?": "Sim",
+                "O que você está buscando para a sua vida nesse momento?": "Estruturar meu trabalho é claro aumentar minha renda para poder investir mais.",
+                "Quais dificuldades te impediram de alcançar os seus objetivos?": "Métodos e técnicas",
+                "Por que você acredita que a Ítala pode te ajudar?": "Pela sua história e por ser uma mulher!",
+                "O que você acha que vai mudar na sua vida após a ajuda da Ítala?": "Muitas coisas na parte profissional e pessoal também!"
+              },
+              "raw_answers": [
+                {
+                  "question": {
+                    "question_title": "Qual o seu nome?",
+                    "question_id": "xnyil5amx4r",
+                    "question_type": "name"
+                  },
+                  "answer": "Maria Angélica"
+                },
+                {
+                  "question": {
+                    "question_title": "Qual o seu número do Whatsapp?",
+                    "question_id": "x3izmoczgl2f",
+                    "question_type": "phone"
+                  },
+                  "answer": {
+                    "country": "55",
+                    "phone": "15992434141"
+                  }
+                },
+                {
+                  "question": {
+                    "question_title": "{{x3izmoczgl2f}}, o seu número do whats está correto?",
+                    "question_id": "xk9d5ta28fl",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "Qual o seu melhor e-mail?",
+                    "question_id": "x3ndhuaywqbd",
+                    "question_type": "email"
+                  },
+                  "answer": "angelicasz@hotmail.com"
+                },
+                {
+                  "question": {
+                    "question_title": "{{x3ndhuaywqbd}}, o seu e-mail está correto?",
+                    "question_id": "xq8chroq72x",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "Você possui renda ativa?",
+                    "question_id": "xauhdsgkglyp",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim - Entre 3 e 6 mil reais"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "Como estão as suas contas? Você consegue fazer sobrar todo o mês ou o seu dinheiro vive sumindo?",
+                    "question_id": "xirvhhz2r1m",
+                    "question_type": "textarea"
+                  },
+                  "answer": "Sim"
+                },
+                {
+                  "question": {
+                    "question_title": "Você mantém um sistema de controle de gastos?",
+                    "question_id": "x6asupua79bu",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "Você tem uma reserva da paz?",
+                    "question_id": "xm09bjzql9z9",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "Você já investe?",
+                    "question_id": "xzkfg562ipym",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim - Entre 100 e 500 mil"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "Você já buscou algum tipo de ajuda ou suporte para lidar com os seus desafios financeiros?",
+                    "question_id": "xiyap8qsdkq",
+                    "question_type": "radio"
+                  },
+                  "answer": [
+                    "Sim"
+                  ]
+                },
+                {
+                  "question": {
+                    "question_title": "O que você está buscando para a sua vida nesse momento?",
+                    "question_id": "xyk3bdgmz0tn",
+                    "question_type": "textarea"
+                  },
+                  "answer": "Estruturar meu trabalho é claro aumentar minha renda para poder investir mais."
+                },
+                {
+                  "question": {
+                    "question_title": "Quais dificuldades te impediram de alcançar os seus objetivos?",
+                    "question_id": "x4vfsym0l87i",
+                    "question_type": "textarea"
+                  },
+                  "answer": "Métodos e técnicas"
+                },
+                {
+                  "question": {
+                    "question_title": "Por que você acredita que a Ítala pode te ajudar?",
+                    "question_id": "xb0chsjhb6mv",
+                    "question_type": "textarea"
+                  },
+                  "answer": "Pela sua história e por ser uma mulher!"
+                },
+                {
+                  "question": {
+                    "question_title": "O que você acha que vai mudar na sua vida após a ajuda da Ítala?",
+                    "question_id": "x6e1vu8k2n1u",
+                    "question_type": "textarea"
+                  },
+                  "answer": "Muitas coisas na parte profissional e pessoal também!"
+                }
+              ],
+              "respondent_utms": {
+                "utm_source": "instagram",
+                "utm_medium": "link_bio",
+                "utm_campaign": "[MR]-PERPETUO-ORGANICO-LEAD-FORMS",
+                "utm_term": null,
+                "utm_content": null
+              }
+            }
+          },
+          "webhookUrl": "https://multiwebhook.patriciagasparian.com.br/webhook/respondi",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-07-11T20:25:45.730Z",
+      "updatedAt": "2024-07-11T20:25:45.730Z",
+      "id": "xYpW6CG0eELGwSj4",
+      "name": "☸️"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-07-29T11:31:17.216Z",
+  "versionId": "d908901b-7c7f-48fd-b0f7-26a71399e4bc"
+}
