@@ -1,0 +1,44 @@
+{
+  "active": true,
+  "connections": {},
+  "createdAt": "2024-07-10T22:59:12.447Z",
+  "id": "lu7eMPmQ4w4Jfa3k",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[MDR] Rapport",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "mdrrapport",
+        "options": {}
+      },
+      "id": "1a88b849-109d-4102-a10b-19da8ee4bd05",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        720,
+        340
+      ],
+      "webhookId": "2d736a43-ca5b-479e-a3f3-57c7a9fed06b"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-07-11T20:25:45.730Z",
+      "updatedAt": "2024-07-11T20:25:45.730Z",
+      "id": "xYpW6CG0eELGwSj4",
+      "name": "☸️"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2024-07-11T20:25:53.539Z",
+  "versionId": "316d58d2-b64d-46b0-89e9-a6d988ad3d1c"
+}
