@@ -1,0 +1,1801 @@
+{
+  "active": false,
+  "connections": {
+    "pega_info_grupo": {
+      "main": [
+        [
+          {
+            "node": "Date & Time1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "If2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "trata_info": {
+      "main": [
+        [
+          {
+            "node": "If1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time1": {
+      "main": [
+        [
+          {
+            "node": "trata_info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "remove_participantes": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_participantes": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "le_grupos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait3": {
+      "main": [
+        [
+          {
+            "node": "atualiza_grupos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_grupos": {
+      "main": [
+        [
+          {
+            "node": "Wait3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "le_grupos1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait4": {
+      "main": [
+        [
+          {
+            "node": "atualiza_grupos1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_grupos1": {
+      "main": [
+        [
+          {
+            "node": "Wait4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "add_participantes",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "remove_participantes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait5": {
+      "main": [
+        [
+          {
+            "node": "le_grupos2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait6": {
+      "main": [
+        [
+          {
+            "node": "atualiza_grupos2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_grupos2": {
+      "main": [
+        [
+          {
+            "node": "Wait6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait7": {
+      "main": [
+        [
+          {
+            "node": "le_grupos3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "remove_participantes2": {
+      "main": [
+        [
+          {
+            "node": "Wait7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait8": {
+      "main": [
+        [
+          {
+            "node": "atualiza_grupos3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "le_grupos3": {
+      "main": [
+        [
+          {
+            "node": "Wait8",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "add_participantes1": {
+      "main": [
+        [
+          {
+            "node": "Wait5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "add_participantes1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "remove_participantes2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "pega_info_grupo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Envia_whatsapp2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-09T13:34:34.697Z",
+  "id": "u6AzYbLuYhRwBF9p",
+  "meta": null,
+  "name": "OR24 - Entra e sai dos grupos",
+  "nodes": [
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "e5a6c644-6ed1-4b61-b269-6f37de437757",
+      "name": "Wait2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        700
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "url": "={{ $json[\"body\"][\"server_url\"] }}/group/findGroupInfos/{{ $json[\"body\"][\"instance\"] }}?groupJid={{ $json[\"body\"][\"data\"][\"id\"] }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "apikey",
+              "value": "={{ $json[\"body\"][\"apikey\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c2619229-ef8c-4957-aee6-afc5ada6d701",
+      "name": "pega_info_grupo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        280,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "url_evolution",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"server_url\"] }}"
+            },
+            {
+              "name": "instance_evolution",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"instance\"] }}"
+            },
+            {
+              "name": "apikey",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"apikey\"] }}"
+            },
+            {
+              "name": "participante_atualizado",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"data\"][\"participants\"][\"0\"].replace('@s.whatsapp.net','') }}"
+            },
+            {
+              "name": "evento",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"event\"] }}"
+            },
+            {
+              "name": "nome_grupo",
+              "stringValue": "={{ $node[\"pega_info_grupo\"].json[\"subject\"] }}"
+            },
+            {
+              "name": "id_grupo",
+              "stringValue": "={{ $node[\"pega_info_grupo\"].json[\"id\"] }}"
+            },
+            {
+              "name": "acao",
+              "stringValue": "={{ $node[\"Webhook\"].json[\"body\"][\"data\"][\"action\"] }}"
+            },
+            {
+              "name": "data",
+              "stringValue": "={{ $json[\"data\"] }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "a5667f74-9ec2-4c28-8ef4-1fb444f92f4a",
+      "name": "trata_info",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        680,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{$today}}",
+        "format": "custom",
+        "customFormat": "dd/MM/yyyy HH:mm",
+        "outputFieldName": "data",
+        "options": {}
+      },
+      "id": "48e32a14-8d43-4ca5-af4a-6fff52e2b879",
+      "name": "Date & Time1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        480,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "7c20c35c-b060-46b3-81fa-6bce5bd592df",
+              "leftValue": "={{ $json[\"evento\"] }}",
+              "rightValue": "group-participants.update",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            },
+            {
+              "id": "4635aab2-5e45-44f9-b93c-8f9c1a465b91",
+              "leftValue": "={{ $json[\"nome_grupo\"] }}",
+              "rightValue": "JORNADA RSC",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8f8e0343-9bb5-4053-90aa-b11855faa53a",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        1280,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2139314829,
+          "mode": "list",
+          "cachedResultName": "Participantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=2139314829"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Telefone": "={{ $json[\"participante_atualizado\"] }}",
+            "Data": "={{ $json[\"data\"] }}",
+            "Group_ID": "={{ $json[\"id_grupo\"] }}",
+            "Grupo": "={{ $json[\"nome_grupo\"] }}",
+            "No Grupo?": "Entrou"
+          },
+          "matchingColumns": [
+            "Telefone"
+          ],
+          "schema": [
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data",
+              "displayName": "Data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Group_ID",
+              "displayName": "Group_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Grupo",
+              "displayName": "Grupo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "No Grupo?",
+              "displayName": "No Grupo?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "b46a505e-b5a8-4aab-abd1-47cfe2a1e157",
+      "name": "add_participantes",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        1660,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2139314829,
+          "mode": "list",
+          "cachedResultName": "Participantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=2139314829"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Telefone": "={{ $json[\"participante_atualizado\"] }}",
+            "Data": "={{ $json[\"data\"] }}",
+            "Group_ID": "={{ $json[\"id_grupo\"] }}",
+            "Grupo": "={{ $json[\"nome_grupo\"] }}",
+            "No Grupo?": "Saiu"
+          },
+          "matchingColumns": [
+            "Telefone"
+          ],
+          "schema": [
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data",
+              "displayName": "Data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Group_ID",
+              "displayName": "Group_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Grupo",
+              "displayName": "Grupo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "No Grupo?",
+              "displayName": "No Grupo?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "ed409fbf-6020-4686-b877-2dfa77c91df7",
+      "name": "remove_participantes",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        1660,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "4170c176-01d2-4e46-83e0-96a69b391ac8",
+      "name": "Wait3",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2280,
+        700
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nome",
+              "lookupValue": "={{ $node[\"remove_participantes\"].json[\"Grupo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f946a666-a2ee-45c9-bad1-bb3cc448567f",
+      "name": "le_grupos",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2080,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nome": "={{ $node[\"le_grupos\"].json[\"Nome\"] }}",
+            "Participantes": "={{ parseInt($node[\"le_grupos\"].json[\"Participantes\"] == '' ? 0 : $node[\"le_grupos\"].json[\"Participantes\"]) - 1 }}",
+            "Saidas": "={{ parseInt($node[\"le_grupos\"].json[\"Saidas\"] == '' ? 0 : $node[\"le_grupos\"].json[\"Saidas\"]) + 1 }}"
+          },
+          "matchingColumns": [
+            "Nome"
+          ],
+          "schema": [
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Participantes",
+              "displayName": "Participantes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Saidas",
+              "displayName": "Saidas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "95accf9b-02b1-46b6-b9ba-376ce6e10614",
+      "name": "atualiza_grupos",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2500,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "4bb88763-468d-4409-a257-e2ccb1d5dcae",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1880,
+        460
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "8140a4fc-0a9d-4903-97e2-985a165a73e0",
+      "name": "Wait4",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2280,
+        460
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nome",
+              "lookupValue": "={{ $node[\"add_participantes\"].json[\"Grupo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1a7dfd35-7788-4579-b6f3-1b300dc652ea",
+      "name": "le_grupos1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2080,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nome": "={{ $node[\"le_grupos1\"].json[\"Nome\"] }}",
+            "Participantes": "={{ parseInt($node[\"le_grupos1\"].json[\"Participantes\"] == '' ? 0 : $node[\"le_grupos1\"].json[\"Participantes\"]) + 1 }}"
+          },
+          "matchingColumns": [
+            "Nome"
+          ],
+          "schema": [
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Participantes",
+              "displayName": "Participantes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Saidas",
+              "displayName": "Saidas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "43feb4e2-1b4e-4957-9a66-938eec69dccc",
+      "name": "atualiza_grupos1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2500,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "7c20c35c-b060-46b3-81fa-6bce5bd592df",
+              "leftValue": "={{ $json[\"nome_grupo\"] }}",
+              "rightValue": "MDC SUPERINTERESSADOS",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "4635aab2-5e45-44f9-b93c-8f9c1a465b91",
+              "leftValue": "={{ $json[\"nome_grupo\"] }}",
+              "rightValue": "JORNADA RSC",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "f3084a75-aa72-4c08-9aee-39bd2147c7b2",
+              "leftValue": "={{ $json[\"nome_grupo\"] }}",
+              "rightValue": "JRSC",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "b35316e2-9d59-4001-ab98-9b271def608f",
+      "name": "If1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        860,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json[\"acao\"] }}",
+                    "rightValue": "add",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "entrou"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "20748a5d-f1b3-4a38-ab2d-86006fcb45f2",
+                    "leftValue": "={{ $json[\"acao\"] }}",
+                    "rightValue": "remove",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "saiu"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2166027f-f06a-4043-94d8-d24258d16ce9",
+      "name": "Switch1",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1480,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "63a36570-d01a-429e-95a5-5a261d1ad912",
+      "name": "Wait5",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        920
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "ed6f8f90-813c-415d-8fa1-80bbe638c7ef",
+      "name": "Wait6",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        920
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nome",
+              "lookupValue": "={{ $node[\"add_participantes1\"].json[\"Grupo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "05522110-4de2-47e4-8bf8-48e99b5c1846",
+      "name": "le_grupos2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2060,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nome": "={{ $node[\"le_grupos2\"].json[\"Nome\"] }}",
+            "Participantes": "={{ parseInt($node[\"le_grupos2\"].json[\"Participantes\"] == '' ? 0 : $node[\"le_grupos2\"].json[\"Participantes\"]) + 1 }}"
+          },
+          "matchingColumns": [
+            "Nome"
+          ],
+          "schema": [
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Participantes",
+              "displayName": "Participantes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Saidas",
+              "displayName": "Saidas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "0d09cf4a-b57b-4300-ae52-ceac4c801662",
+      "name": "atualiza_grupos2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2480,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=1998535770#gid=1998535770",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "ID": "={{ $json[\"id_grupo\"] }}",
+            "Nome": "={{ $json[\"nome_grupo\"] }}"
+          },
+          "matchingColumns": [
+            "ID"
+          ],
+          "schema": [
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Participantes",
+              "displayName": "Participantes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Saidas",
+              "displayName": "Saidas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "36fbf2e7-b368-4e5c-9264-375cf203e1ca",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        1080,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "8b4051a2-c1ac-45af-afb8-817d01a4e63a",
+      "name": "Wait7",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1860,
+        1160
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2139314829,
+          "mode": "list",
+          "cachedResultName": "Participantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=2139314829"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Telefone": "={{ $node[\"If1\"].json[\"participante_atualizado\"] }}",
+            "Data": "={{ $node[\"If1\"].json[\"data\"] }}",
+            "Group_ID": "={{ $node[\"If1\"].json[\"id_grupo\"] }}",
+            "Grupo": "={{ $node[\"If1\"].json[\"nome_grupo\"] }}",
+            "No Grupo?": "Saiu"
+          },
+          "matchingColumns": [
+            "Telefone"
+          ],
+          "schema": [
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data",
+              "displayName": "Data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Group_ID",
+              "displayName": "Group_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Grupo",
+              "displayName": "Grupo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "No Grupo?",
+              "displayName": "No Grupo?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "704a3a05-14d4-40da-bb46-9a06d473d9c0",
+      "name": "remove_participantes2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        1640,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 1.5,
+        "unit": "seconds"
+      },
+      "id": "cc34c67a-50a8-448b-99dd-b6387a27a962",
+      "name": "Wait8",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        1160
+      ],
+      "webhookId": "8aa0db11-4eba-446f-97ac-16d76abaf1d2"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "Nome",
+              "lookupValue": "={{ $node[\"remove_participantes2\"].json[\"Grupo\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c23f1ecf-88bc-4ebb-b370-6820ab573a30",
+      "name": "le_grupos3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2060,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1998535770,
+          "mode": "list",
+          "cachedResultName": "Grupos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=1998535770"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nome": "={{ $node[\"le_grupos3\"].json[\"Nome\"] }}",
+            "Participantes": "={{ parseInt($node[\"le_grupos3\"].json[\"Participantes\"] == '' ? 0 : $node[\"le_grupos3\"].json[\"Participantes\"]) - 1 }}",
+            "Saidas": "={{ parseInt($node[\"le_grupos3\"].json[\"Saidas\"] == '' ? 0 : $node[\"le_grupos3\"].json[\"Saidas\"]) + 1 }}"
+          },
+          "matchingColumns": [
+            "Nome"
+          ],
+          "schema": [
+            {
+              "id": "Nome",
+              "displayName": "Nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Participantes",
+              "displayName": "Participantes",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Saidas",
+              "displayName": "Saidas",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "493320c1-7c4d-4d8d-8c46-37c55029ed38",
+      "name": "atualiza_grupos3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        2480,
+        1160
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit?gid=2139314829#gid=2139314829",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 2139314829,
+          "mode": "list",
+          "cachedResultName": "Participantes",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1p79wIki5cGLAHl_B83dB43wMnDb2NTCpa1atXUoS5LY/edit#gid=2139314829"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Telefone": "={{ $node[\"If1\"].json[\"participante_atualizado\"] }}",
+            "Data": "={{ $node[\"If1\"].json[\"data\"] }}",
+            "Group_ID": "={{ $node[\"If1\"].json[\"id_grupo\"] }}",
+            "Grupo": "={{ $node[\"If1\"].json[\"nome_grupo\"] }}",
+            "No Grupo?": "Entrou"
+          },
+          "matchingColumns": [
+            "Telefone"
+          ],
+          "schema": [
+            {
+              "id": "Telefone",
+              "displayName": "Telefone",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Data",
+              "displayName": "Data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Group_ID",
+              "displayName": "Group_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Grupo",
+              "displayName": "Grupo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "No Grupo?",
+              "displayName": "No Grupo?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "4e869f8c-829c-49e3-9369-9390e13b42a3",
+      "name": "add_participantes1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.3,
+      "position": [
+        1640,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $node[\"If1\"].json[\"acao\"] }}",
+                    "rightValue": "add",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "entrou"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "20748a5d-f1b3-4a38-ab2d-86006fcb45f2",
+                    "leftValue": "={{ $node[\"If1\"].json[\"acao\"] }}",
+                    "rightValue": "remove",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "saiu"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a5d4884d-52f2-42cd-9df6-739397e99346",
+      "name": "Switch2",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        1460,
+        1040
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "evolution",
+        "options": {}
+      },
+      "id": "48587ec5-120f-4c61-af53-e9f2d3ba6bfe",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        80,
+        700
+      ],
+      "webhookId": "314c998f-b757-4aa6-b41a-6e6787e21ad8"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "d2da3074-d79f-461c-ace9-d578462b5fc8",
+              "leftValue": "={{ $node[\"Webhook\"].json[\"body\"][\"data\"][\"participants\"][\"0\"].split('@')[0] }}",
+              "rightValue": "556391156519",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            },
+            {
+              "id": "f1edf83b-1d20-4e49-bb88-195cfe6aee05",
+              "leftValue": "={{ $node[\"Webhook\"].json[\"body\"][\"data\"][\"participants\"][\"0\"].split('@')[0] }}",
+              "rightValue": "555181403175",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "8b7d20a7-0b9c-4b3e-90c5-adfc2a15f95f",
+      "name": "If2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "11f56100-d2bb-4c63-a9b2-d0cc6b4d2d12",
+              "name": "body.data.participants",
+              "value": "={{ $node[\"Webhook\"].json[\"body\"][\"data\"][\"participants\"][\"0\"].split('@')[0] }}",
+              "type": "string"
+            },
+            {
+              "id": "f48ff3da-92ca-4e30-b640-cdda7fe869b0",
+              "name": "=subject",
+              "value": "={{ $node[\"pega_info_grupo\"].json[\"subject\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0ccdff27-f4f9-4e97-a7cc-274232662d8e",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        680,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "requestMethod": "=POST",
+        "url": "=https://backend.botconversa.com.br/api/v1/webhook/subscriber/476555579/send_message/",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "type",
+              "value": "text"
+            },
+            {
+              "name": "value",
+              "value": "=*Whatsapp:* {{ $json[\"body\"][\"data\"][\"participants\"] }}\n*Grupo:* {{ $json[\"subject\"] }}"
+            }
+          ]
+        },
+        "headerParametersUi": {
+          "parameter": [
+            {
+              "name": "API-KEY",
+              "value": "aa4ad4df-bc45-4785-8d25-b218200b61f0"
+            }
+          ]
+        }
+      },
+      "name": "Envia_whatsapp2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 2,
+      "position": [
+        860,
+        460
+      ],
+      "id": "cc9eca3e-acaf-4846-a282-e78e2dcc7ae4",
+      "continueOnFail": true
+    },
+    {
+      "parameters": {},
+      "id": "6df3ddca-29eb-4f16-9320-20b4a168725e",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        460
+      ]
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-08-09T13:34:34.697Z",
+  "versionId": "02560406-f7fc-41b4-b3b2-6cc1dc0eaf41"
+}
