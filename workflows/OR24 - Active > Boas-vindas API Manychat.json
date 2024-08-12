@@ -1,0 +1,1138 @@
+{
+  "active": false,
+  "connections": {
+    "Trata dados": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "telefone_active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "telefone_active": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "manda_para_fila",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_encontrou_telefone": {
+      "main": [
+        [
+          {
+            "node": "procura_id_manychat_pelo_email",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_contato_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "nao_encontrou_email": {
+      "main": [
+        [
+          {
+            "node": "cria_contato_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "atualiza_contato_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "procura_id_manychat_pelo_telefone": {
+      "main": [
+        [
+          {
+            "node": "nao_encontrou_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "atualiza_contato_manychat": {
+      "main": [
+        [
+          {
+            "node": "erro_de_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "verifica_whatsapp": {
+      "main": [
+        [],
+        [
+          {
+            "node": "atualiza_contato_manychat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "procura_id_manychat_pelo_email": {
+      "main": [
+        [
+          {
+            "node": "nao_encontrou_email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "cria_contato_manychat": {
+      "main": [
+        [
+          {
+            "node": "definir_campo_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chega_da_fila": {
+      "main": [
+        [
+          {
+            "node": "ajusta_dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ajusta_dados": {
+      "main": [
+        [
+          {
+            "node": "procura_id_manychat_pelo_telefone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "erro_de_email": {
+      "main": [
+        [
+          {
+            "node": "envia_fluxo_boas_vindas",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "envia_fluxo_boas_vindas": {
+      "main": [
+        [
+          {
+            "node": "preenche_id_active",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign": {
+      "main": [
+        [
+          {
+            "node": "fim",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "definir_campo_telefone": {
+      "main": [
+        [
+          {
+            "node": "verifica_whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Trata dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-08T20:21:31.713Z",
+  "id": "k20KzuYvGE0medov",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "OR24 - Active > Boas-vindas API Manychat",
+  "nodes": [
+    {
+      "parameters": {
+        "errorMessage": "An error ocurred!"
+      },
+      "id": "f33e074c-cc67-4b68-a6b6-1b3c5d26743f",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        940,
+        1440
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "0490329c-e56a-43b7-ba7b-042efa337abe",
+      "name": "fim",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1380,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "or24-manychat",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "durable": true
+        }
+      },
+      "id": "639300af-e514-4bf3-9110-5576efaa75a2",
+      "name": "manda_para_fila",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        700
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "PkbETTrkHAqxKxr4",
+          "name": "RabbitMQ account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return typeof $node[\"Webhook\"].json[\"body\"] == 'string' ? JSON.parse($node[\"Webhook\"].json[\"body\"]) : $node[\"Webhook\"].json[\"body\"]\n"
+      },
+      "id": "07a394b1-1bd9-44f2-9cc0-bf6f58042c68",
+      "name": "Trata dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -1140,
+        700
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "044545a7-771c-433c-9960-7fe68ac6834c",
+              "name": "ID_ACTIVE",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[id]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "af40a53a-59c5-4752-a518-ecce507e2a77",
+              "name": "NOME",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[first_name]\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}",
+              "type": "string"
+            },
+            {
+              "id": "82ed55cd-648a-4c66-8cd6-66eab97faee4",
+              "name": "EMAIL",
+              "value": "={{  $node[\"Trata dados\"].json[\"contact[email]\"].toLowerCase().replace(' ','') }}",
+              "type": "string"
+            },
+            {
+              "id": "f1b91f68-443a-4ae7-9d46-7f92cc9756cd",
+              "name": "TELEFONE",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[phone]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "e7b6a108-36af-42be-9ec4-9cbda2819f60",
+              "name": "SOBRENOME",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[last_name]\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}",
+              "type": "string"
+            },
+            {
+              "id": "3de998b4-eaa2-4cfc-9ec0-736f66060f89",
+              "name": "['contact[fields][dados_data_da_criacao_do_contato]']",
+              "value": "={{ $json['contact[fields][dados_data_da_criacao_do_contato]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "76395f70-f3d7-4092-958f-fa6194dcda28",
+              "name": "['contact[fields][dados_id_usuario]']",
+              "value": "={{ $json['contact[fields][dados_id_usuario]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "794a34fe-bd57-41f6-bef2-251dab4d00e8",
+              "name": "['contact[fields][dados_id_active]']",
+              "value": "={{ $json[\"contact[id]\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "961c1d4e-c38c-410c-8905-753783dcfae2",
+              "name": "['contact[fields][dados_id_manychat]']",
+              "value": "={{ $json['contact[fields][dados_id_manychat]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "e9c2b29f-8f57-4fdb-82be-250b06318776",
+              "name": "['contact[fields][dados_id_crm]']",
+              "value": "={{ $json['contact[fields][dados_id_crm]'] }}",
+              "type": "string"
+            },
+            {
+              "id": "aba7b9a4-6915-4463-a0c8-ff435ff8918f",
+              "name": "[\"contact[fields\"][\"utmsource\"]",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[fields\"][\"utmsource\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "ba3b73cb-5cdc-418a-8705-2a80c8aad056",
+              "name": "[\"contact[fields\"][\"utmmedium\"]",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[fields\"][\"utmmedium\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "67f31285-5a55-447c-8189-4c8f19a0b1df",
+              "name": "[\"contact[fields\"][\"utmcampaign\"]",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[fields\"][\"utmcampaign\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "b25fff5e-3ba3-428d-8751-70d758825cec",
+              "name": "[\"contact[fields\"][\"utmcontent\"]",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[fields\"][\"utmcontent\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "aeac4a8a-179d-45d5-9591-6b9270985994",
+              "name": "[\"contact[fields\"][\"utmterm\"]",
+              "value": "={{ $node[\"Trata dados\"].json[\"contact[fields\"][\"utmterm\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "99c21053-6b34-481c-a131-2a46537f1806",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        -960,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "function formataTelefone(number) {\n    number = number.toString().replace(/[^\\d]/g, \"\")\n    let ddi = '55'\n    let ddd = number.substring(0, 2)\n\n    if (number.length == 13) {\n        let ddi = number.substring(0, 2)\n        let ddd = number.substring(2, 4)\n        return ddi + ddd + (ddd <= 28 ? number.substring(4, 13) : number.substring(5, 13))\n\n    } else if (number.length == 11) {\n        return ddi + ddd + (ddd <= 28 ? number.substring(2, 11) : number.substring(3, 11))\n\n    } else if (number.length == 10) {\n        return ddi + ddd + (ddd <= 28 ? '9' : '') + number.substring(2, 11)\n\n    } else if (number.length == 12) {\n        return number.substring(0, 2) == '55' ? number : (number.substring(0, 1) == '0' ? formataTelefone(number.substring(1, 12)) : number)\n\n    } else {\n        return number\n    }\n}\n\nreturn { Telefone : formataTelefone($input.all()[0].json['TELEFONE']) };"
+      },
+      "id": "ca83f2be-9c54-4a73-82b2-07fad4d87f85",
+      "name": "telefone_active",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -760,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cb690e51-298e-4b65-af65-72e2fdd516bf",
+              "name": "Telefone",
+              "value": "={{ $json.Telefone }}",
+              "type": "string"
+            },
+            {
+              "id": "63d016b9-5028-4125-b483-86ddfdbaf705",
+              "name": "ID_ACTIVE",
+              "value": "={{ $('Edit Fields').item.json.ID_ACTIVE }}",
+              "type": "string"
+            },
+            {
+              "id": "33a17906-717d-4108-8cda-ffbc2f375a4b",
+              "name": "NOME",
+              "value": "={{ $('Edit Fields').item.json.NOME }}",
+              "type": "string"
+            },
+            {
+              "id": "8641cd20-188f-47fe-bc22-96c465d57b49",
+              "name": "EMAIL",
+              "value": "={{ $('Edit Fields').item.json.EMAIL }}",
+              "type": "string"
+            },
+            {
+              "id": "596ca3a7-c031-4826-8e6a-6f947c739e26",
+              "name": "SOBRENOME",
+              "value": "={{ $('Edit Fields').item.json.SOBRENOME }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9d54b064-8e71-4369-a0d2-a5e9171ee2f8",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -580,
+        700
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"procura_id_manychat_pelo_telefone\"].json[\"data\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "3a8059bf-3284-4d33-8746-bb9f7eb56c02",
+      "name": "nao_encontrou_telefone",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -740,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"procura_id_manychat_pelo_email\"].json[\"data\"] }}",
+              "operation": "isEmpty"
+            }
+          ]
+        }
+      },
+      "id": "2bc4081b-e69f-4d86-ae01-0c6f13dadb65",
+      "name": "nao_encontrou_email",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -380,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.manychat.com/fb/subscriber/findByCustomField",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "field_id",
+              "value": "=11578240"
+            },
+            {
+              "name": "field_value",
+              "value": "=55+{{ $json[\"whatsapp\"].slice(2) }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "99490be7-1d45-4ebb-8901-5403a804f823",
+      "name": "procura_id_manychat_pelo_telefone",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -920,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/updateSubscriber",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"fname\"] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"lname\"] }}"
+            },
+            {
+              "name": "has_opt_in_sms",
+              "value": "true"
+            },
+            {
+              "name": "has_opt_in_email",
+              "value": "true"
+            },
+            {
+              "name": "consent_phrase",
+              "value": "Olá, aqui é a Ítala. Posso ter seu contato?"
+            },
+            {
+              "name": "whatsapp_phone",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"whatsapp\"] }}"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"whatsapp\"] }}"
+            },
+            {
+              "name": "subscriber_id",
+              "value": "={{\n  $node[\"cria_contato_manychat\"].runIndex >= 0 \n    ? $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"]\n    : $node[\"procura_id_manychat_pelo_email\"].runIndex >= 0 \n      ? $node[\"procura_id_manychat_pelo_email\"].json[\"data\"][\"id\"]    : $node[\"procura_id_manychat_pelo_telefone\"].runIndex >= 0 \n      ? $node[\"procura_id_manychat_pelo_telefone\"].json[\"data\"][\"0\"][\"id\"]\n              : null\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0352924a-12fa-48cf-9f30-ef36fdf8084c",
+      "name": "atualiza_contato_manychat",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        420,
+        1200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "0b43ebf2-3b3b-4851-b3ff-a91252309dfd",
+              "leftValue": "={{ $node[\"cria_contato_manychat\"].json[\"error\"][\"message\"] }}",
+              "rightValue": "The input value is not a valid WhatsApp ID",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "8b7229c8-bcba-4744-875b-4fccfeadb224",
+      "name": "verifica_whatsapp",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        220,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.manychat.com/fb/subscriber/findBySystemField",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "email",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"EMAIL\"] }}"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "1747092d-05d3-47a5-8846-beabd068055a",
+      "name": "procura_id_manychat_pelo_email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -560,
+        1000
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/createSubscriber",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "first_name",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"fname\"] }}"
+            },
+            {
+              "name": "last_name",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"lname\"] }}"
+            },
+            {
+              "name": "has_opt_in_sms",
+              "value": "true"
+            },
+            {
+              "name": "has_opt_in_email",
+              "value": "true"
+            },
+            {
+              "name": "consent_phrase",
+              "value": "Olá, aqui é a Ítala. Posso ter seu contato?"
+            },
+            {
+              "name": "phone",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"whatsapp\"] }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"email\"] }}"
+            },
+            {
+              "name": "whatsapp_phone",
+              "value": "={{ $node[\"ajusta_dados\"].json[\"whatsapp\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4d8ec7d5-bd03-48be-b4b7-9080def71637",
+      "name": "cria_contato_manychat",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -180,
+        860
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "queue": "or24-manychat",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "acknowledge": "executionFinishesSuccessfully",
+          "jsonParseBody": true,
+          "parallelMessages": 1
+        }
+      },
+      "id": "ce336bd8-a0d4-48de-afaa-6207be1b3b5e",
+      "name": "chega_da_fila",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1280,
+        1180
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "PkbETTrkHAqxKxr4",
+          "name": "RabbitMQ account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6391350e-b1f4-4654-996b-edf76765c753",
+              "name": "fname",
+              "value": "={{ $json[\"content\"][\"NOME\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "48614d4e-5351-4522-9047-d67280e26180",
+              "name": "lname",
+              "value": "={{ $json[\"content\"][\"SOBRENOME\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "1030c484-cfab-4418-b24b-453e7089594e",
+              "name": "fullname",
+              "value": "={{ $json[\"content\"][\"NOME\"] }} {{ $json[\"content\"][\"SOBRENOME\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "01ae3ba3-8aab-4f9e-aeed-2a1977183633",
+              "name": "email",
+              "value": "={{ $json[\"content\"][\"EMAIL\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "2a63556c-f48a-4596-8e0d-bf7321e5ea09",
+              "name": "whatsapp",
+              "value": "={{ $json[\"content\"][\"Telefone\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "2dc58ea8-d7b0-4c00-8ec2-f369464cbd0a",
+              "name": "utm_source",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_source\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "8cc8043f-0ced-4cc4-8835-c7b9801f9873",
+              "name": "utm_medium",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_medium\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "3e319701-a968-4c07-b04e-f676a206d268",
+              "name": "utm_campaign",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_campaign\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "6ed6a856-666a-40b4-b8df-2cdb84ebf662",
+              "name": "utm_term",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_term\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "569e3ac0-b5e2-4f28-8221-17a5ff42c1e5",
+              "name": "utm_content",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_content\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "1f7b87e9-3d53-4b7a-8f61-9cffc5034e90",
+              "name": "utm_id",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"utm_id\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "168514e1-51e7-4482-b827-4ae5aa0d2c1b",
+              "name": "data do cadastro",
+              "value": "={{ $node[\"chega_da_fila\"].json.content['data do cadastro'] }}",
+              "type": "string"
+            },
+            {
+              "id": "2a875507-2e9d-4ce6-ba01-5db4b7b3a342",
+              "name": "id_active",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"ID_ACTIVE\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8924abdc-dc55-4e1d-9dea-330a9b5d06da",
+      "name": "ajusta_dados",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        -1100,
+        1180
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json[\"error\"][\"message\"] }}",
+              "operation": "contains",
+              "value2": "This email address already exists"
+            },
+            {
+              "value1": "={{ $node[\"atualiza_contato_manychat\"].json[\"data\"][\"id\"] }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        },
+        "combineOperation": "any"
+      },
+      "id": "6e558644-bc34-4908-9926-d62008bc18e6",
+      "name": "erro_de_email",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        600,
+        1200
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/sending/sendFlow",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "flow_ns",
+              "value": "=content20240809112243_132162"
+            },
+            {
+              "name": "subscriber_id",
+              "value": "={{\n  $node[\"cria_contato_manychat\"].runIndex >= 0 \n    ? $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"]\n    : $node[\"procura_id_manychat_pelo_email\"].runIndex >= 0 \n      ? $node[\"procura_id_manychat_pelo_email\"].json[\"data\"][\"id\"]    : $node[\"procura_id_manychat_pelo_telefone\"].runIndex >= 0 \n      ? $node[\"procura_id_manychat_pelo_telefone\"].json[\"data\"][\"0\"][\"id\"]\n              : null\n}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c57dc6b7-ab8f-4ab3-accd-56db73db4c6d",
+      "name": "envia_fluxo_boas_vindas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        820,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"ID_ACTIVE\"] }}",
+        "updateFields": {
+          "fieldValues": {
+            "property": [
+              {
+                "field": "19",
+                "value": "={{ $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"] }}"
+              }
+            ]
+          }
+        }
+      },
+      "id": "9cce3a2c-9e84-4755-9949-c5215d72c3cb",
+      "name": "ActiveCampaign",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        980
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/setCustomField",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "subscriber_id",
+              "value": "={{\n  $node[\"cria_contato_manychat\"].runIndex >= 0 \n    ? $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"]\n    : $node[\"procura_id_manychat_pelo_email\"].runIndex >= 0 \n      ? $node[\"procura_id_manychat_pelo_email\"].json[\"data\"][\"id\"]    : $node[\"procura_id_manychat_pelo_telefone\"].runIndex >= 0 \n      ? $node[\"procura_id_manychat_pelo_telefone\"].json[\"data\"][\"0\"][\"id\"]\n              : null\n}}"
+            },
+            {
+              "name": "field_id",
+              "value": 11573452
+            },
+            {
+              "name": "field_value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"ID_ACTIVE\"].toNumber() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b19dd29d-d311-4725-b39d-608402a64c39",
+      "name": "preenche_id_active",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        980
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.manychat.com/fb/subscriber/setCustomField",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "subscriber_id",
+              "value": "={{ $node[\"cria_contato_manychat\"].json[\"data\"][\"id\"]}}"
+            },
+            {
+              "name": "field_id",
+              "value": "11578240"
+            },
+            {
+              "name": "field_value",
+              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone\"] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c5285e67-8faa-41b1-b01b-26dfe0976eae",
+      "name": "definir_campo_telefone",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        20,
+        860
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "height": 308.19739952718675
+      },
+      "id": "98e25231-2c53-4ebe-8046-3851bb3599d7",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        760,
+        840
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "id": "51e2abf3-79be-46ba-83f7-ddd548995b38",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -1300,
+        700
+      ],
+      "webhookId": "5b931d45-aae6-4711-9663-282c5b24acae"
+    },
+    {
+      "parameters": {
+        "url": "https://api.manychat.com/fb/subscriber/getInfoByUserRef?user_ref=874438059",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "Authorization",
+              "value": "=Bearer 522622:c1c1aa2178cb4e73628eb70d5638a0ad"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b212be91-3143-4db7-8b40-89b959b500ed",
+      "name": "procura_id_manychat_pelo_telefone1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        -600,
+        1480
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aor24-active-147xxxx",
+        "options": {}
+      },
+      "id": "7857baed-c2ce-498e-992e-3fb3c5b80976",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1460,
+        700
+      ],
+      "webhookId": "1d52435a-df6f-47ce-b9c5-922f0484aea5"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 2,
+  "updatedAt": "2024-08-12T18:57:46.059Z",
+  "versionId": "18e2ebd6-58bb-4d0a-8663-835adb4a4806"
+}
