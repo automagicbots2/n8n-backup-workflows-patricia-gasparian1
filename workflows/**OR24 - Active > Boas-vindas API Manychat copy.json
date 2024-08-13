@@ -199,17 +199,6 @@
         ]
       ]
     },
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Wait",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "cria_contato_manychat": {
       "main": [
         [
@@ -226,6 +215,17 @@
         [
           {
             "node": "verifica_whatsapp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Wait",
             "type": "main",
             "index": 0
           }
@@ -710,8 +710,7 @@
       "position": [
         820,
         980
-      ],
-      "disabled": true
+      ]
     },
     {
       "parameters": {
@@ -842,7 +841,7 @@
             },
             {
               "name": "field_value",
-              "value": "=55{{ $json[\"whatsapp\"].slice(2) }}"
+              "value": "={{ $node[\"Edit Fields\"].json[\"TELEFONE\"].replace(\"+\",\"\") }}"
             }
           ]
         },
@@ -1054,22 +1053,6 @@
     },
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "aor24-active-147",
-        "options": {}
-      },
-      "id": "e9aed888-b7e9-4d50-8b8f-762cf8ace129",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        -1460,
-        700
-      ],
-      "webhookId": "30569789-77dd-41aa-b6a9-ac93d9953c14"
-    },
-    {
-      "parameters": {
         "method": "POST",
         "url": "https://api.manychat.com/fb/subscriber/setCustomField",
         "sendHeaders": true,
@@ -1137,7 +1120,7 @@
             },
             {
               "name": "field_value",
-              "value": "={{ $node[\"chega_da_fila\"].json[\"content\"][\"Telefone\"] }}"
+              "value": "={{ $node[\"Edit Fields\"].json[\"TELEFONE\"].replace(\"+\",\"\") }}"
             }
           ]
         },
@@ -1152,6 +1135,22 @@
         860
       ],
       "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aor24-active-147",
+        "options": {}
+      },
+      "id": "e9aed888-b7e9-4d50-8b8f-762cf8ace129",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -1460,
+        700
+      ],
+      "webhookId": "30569789-77dd-41aa-b6a9-ac93d9953c14"
     }
   ],
   "pinData": {
@@ -1161,7 +1160,7 @@
           "headers": {
             "host": "multiwebhook.patriciagasparian.com.br",
             "user-agent": "GuzzleHttp/6.5.5 curl/8.3.0 PHP/8.1.29",
-            "content-length": "1441",
+            "content-length": "460",
             "content-type": "application/x-www-form-urlencoded",
             "x-forwarded-for": "3.220.243.205",
             "x-forwarded-host": "multiwebhook.patriciagasparian.com.br",
@@ -1174,28 +1173,17 @@
           "params": {},
           "query": {},
           "body": {
-            "contact[id]": "13116",
-            "contact[email]": "vns.mansur@gmail.com",
-            "contact[first_name]": "Vinicius",
+            "contact[id]": "172466",
+            "contact[email]": "gabrielll@gmail.com",
+            "contact[first_name]": "Gabriel",
             "contact[last_name]": "",
-            "contact[phone]": "+5567992090535",
+            "contact[phone]": "+5511955835870",
             "contact[orgname]": "",
             "contact[customer_acct_name]": "",
-            "contact[tags]": "lead-quente, lead-superquente, lead-livre, mr4-pv, mcc-lead, lead-form-adslp, mr4-lead-lp, aph-total, aph-fluxoemail, aph-captura, APH24-IG, recebeu-link-indicacao, mr-planos12-v2, gfm2-aplicacao, prod-mapa-da-riqueza, prod-box-virada-financeira, prod-alunos, or24-total, or24-lead",
-            "contact[ip4]": "10.13.141.168",
-            "contact[fields][utmsource]": "whatsapp",
-            "contact[fields][utmmedium]": "grupos",
-            "contact[fields][utmcampaign]": "pvm2024",
-            "contact[fields][utmcontent]": "msg",
-            "contact[fields][utmterm]": "Direct",
-            "contact[fields][link_de_indicacao]": "https://aph.italadosanjos.com.br/IG24_p147",
-            "contact[fields][data_de_entrada]": "2024-08-12T16:29:15-03:00",
-            "contact[fields][pontos_de_indicao]": "0",
-            "contact[fields][dados_data_da_criacao_do_contato]": "2024-07-10",
-            "contact[fields][prod_box_da_virada_financeira]": "Box da Virada Financeira",
-            "contact[fields][prod_box_da_virada_financeira_data]": "2023-11-24",
-            "contact[fields][prod_o_mapa_da_riqueza]": "Mapa da Riqueza [parcelamentos]",
-            "contact[fields][prod_o_mapa_da_riqueza_9data]": "2023-07-10",
+            "contact[tags]": "or24-total, or24-lead",
+            "contact[ip4]": "0.0.0.0",
+            "contact[fields][utmmedium]": "org",
+            "contact[fields][data_de_entrada]": "2024-08-12T18:22:12-03:00",
             "contact[fields][or24_data_do_cadastro]": "2024-08-12",
             "seriesid": "147"
           },
@@ -1211,6 +1199,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-12T19:36:22.612Z",
-  "versionId": "7a58deed-f490-4219-ac89-4baa80f0a7d8"
+  "updatedAt": "2024-08-13T01:33:25.085Z",
+  "versionId": "5915992d-a3b3-4df1-b926-13d3ece978fe"
 }
