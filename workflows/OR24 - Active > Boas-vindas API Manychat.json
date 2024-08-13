@@ -527,7 +527,7 @@
             },
             {
               "name": "field_value",
-              "value": "=55+{{ $json[\"whatsapp\"].slice(2) }}"
+              "value": "=55{{ $json[\"whatsapp\"].slice(2) }}"
             }
           ]
         },
@@ -935,7 +935,8 @@
       "position": [
         820,
         980
-      ]
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -1126,13 +1127,39 @@
       "webhookId": "1d52435a-df6f-47ce-b9c5-922f0484aea5"
     }
   ],
-  "pinData": {},
+  "pinData": {
+    "chega_da_fila": [
+      {
+        "json": {
+          "fields": {
+            "consumerTag": "amq.ctag-cH-u5GzbcviYqHeXHc-I6w",
+            "deliveryTag": 919,
+            "redelivered": true,
+            "exchange": "",
+            "routingKey": "or24-manychat"
+          },
+          "properties": {
+            "headers": {
+              "x-delivery-count": 918
+            }
+          },
+          "content": {
+            "Telefone": "5522998235634",
+            "ID_ACTIVE": "172459",
+            "NOME": "Teste Jp",
+            "EMAIL": "joaoteste@gmail.com",
+            "SOBRENOME": ""
+          }
+        }
+      }
+    ]
+  },
   "settings": {
     "executionOrder": "v1"
   },
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-08-12T18:57:46.059Z",
-  "versionId": "18e2ebd6-58bb-4d0a-8663-835adb4a4806"
+  "updatedAt": "2024-08-12T20:57:14.377Z",
+  "versionId": "4e8bc06d-b2ab-4aef-b936-9e41ad5b5289"
 }
