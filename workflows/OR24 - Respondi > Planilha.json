@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Google Sheets",
+            "node": "Google Sheets1",
             "type": "main",
             "index": 0
           }
@@ -43,6 +43,11 @@
             "index": 0
           }
         ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        []
       ]
     }
   },
@@ -293,8 +298,8 @@
             },
             {
               "id": "91317b99-a2c8-40b3-8c61-e8288906c248",
-              "name": "content.body.respondent.answers[\"Por que você fez a inscrição no evento A PRIMEIRA HERDEIRA?\"]",
-              "value": "={{ $json.content.body.respondent.answers[\"Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?\"] }}",
+              "name": "content.body.respondent.answers[\"Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?\"]",
+              "value": "={{ $json[\"content\"][\"body\"][\"respondent\"][\"answers\"][\"Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?\"] }}",
               "type": "string"
             },
             {
@@ -343,6 +348,18 @@
               "id": "de401a81-9a1c-459a-9f33-da98f3deb90e",
               "name": "content.body.respondent.respondent_id",
               "value": "={{ $json.content.body.respondent.respondent_id }}",
+              "type": "string"
+            },
+            {
+              "id": "bb8d1cd1-a04a-4514-b5a7-021d9405d8ea",
+              "name": "content.body.respondent.answers[\"Qual o seu nível de escolaridade?\"]",
+              "value": "={{ $json.content.body.respondent.answers[\"Qual o seu nível de escolaridade?\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "7d0cc37f-4d8f-4c02-aa5f-52b732ad22bb",
+              "name": "content.body.respondent.answers[\"Qual é a sua profissão?\"]",
+              "value": "={{ $json.content.body.respondent.answers[\"Qual é a sua profissão?\"] }}",
               "type": "string"
             }
           ]
@@ -426,14 +443,16 @@
             "Me conte um medo que você tem em relação ao seu futuro:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Me conte um medo que você tem em relação ao seu futuro:\"] }}",
             "Hoje, qual é a sua maior dificuldade em relação às finanças & investimentos?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Hoje, qual é a sua maior dificuldade em relação às finanças & investimentos?\"] }}",
             "Na sua opinião, o que o dinheiro significa para você?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Na sua opinião, o que o dinheiro significa para você?\"] }}",
-            "Por que você fez a inscrição no evento A PRIMEIRA HERDEIRA?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Por que você fez a inscrição no evento A PRIMEIRA HERDEIRA?\"] }}",
             "O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?\"] }}",
             "Numa escala de 1 a 10, o quanto você está comprometida em mudar a sua vida financeira?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Numa escala de 1 a 10, o quanto você está comprometida em mudar a sua vida financeira?\"] }}",
             "Há quanto tempo você conhece a Ítala e/ou a Multiplique?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Há quanto tempo você conhece a Ítala e/ou a Multiplique?\"] }}",
             "Por onde você conheceu a Ítala e/ou Multiplique": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Por onde você conheceu a Ítala e/ou Multiplique\"] }}",
             "Você já fez algum outro curso/treinamento com a Ítala/Multiplique?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você já fez algum outro curso/treinamento com a Ítala/Multiplique?\"] }}",
             "Pontuação": "={{ $('Edit Fields').item.json.content.body.respondent.score }}",
-            "ID": "={{ $('Edit Fields').item.json.content.body.respondent.respondent_id }}"
+            "ID": "={{ $('Edit Fields').item.json.content.body.respondent.respondent_id }}",
+            "Qual o seu nível de escolaridade?": "={{ $node[\"Edit Fields\"].json[\"content\"][\"body\"][\"respondent\"][\"answers\"][\"Qual o seu nível de escolaridade?\"] }}",
+            "Qual é a sua profissão?": "={{ $node[\"Edit Fields\"].json[\"content\"][\"body\"][\"respondent\"][\"answers\"][\"Qual é a sua profissão?\"] }}",
+            "Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?\"] }}"
           },
           "matchingColumns": [
             "Qual é o seu melhor e-mail?"
@@ -676,6 +695,26 @@
               "canBeUsedToMatch": true
             },
             {
+              "id": "Qual o seu nível de escolaridade?",
+              "displayName": "Qual o seu nível de escolaridade?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Qual é a sua profissão?",
+              "displayName": "Qual é a sua profissão?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
               "id": "Por que seria bom ter mais dinheiro? Escolha até 3 opções que mais te movem.",
               "displayName": "Por que seria bom ter mais dinheiro? Escolha até 3 opções que mais te movem.",
               "required": false,
@@ -730,13 +769,14 @@
               "canBeUsedToMatch": true
             },
             {
-              "id": "Por que você fez a inscrição no evento A PRIMEIRA HERDEIRA?",
-              "displayName": "Por que você fez a inscrição no evento A PRIMEIRA HERDEIRA?",
+              "id": "Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?",
+              "displayName": "Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?",
               "required": false,
               "defaultMatch": false,
               "display": true,
               "type": "string",
-              "canBeUsedToMatch": true
+              "canBeUsedToMatch": true,
+              "removed": false
             },
             {
               "id": "O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?",
@@ -846,28 +886,20 @@
               "display": true,
               "type": "string",
               "canBeUsedToMatch": true
-            },
-            {
-              "id": "content",
-              "displayName": "content",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "type": "string",
-              "canBeUsedToMatch": true,
-              "removed": false
             }
           ]
         },
-        "options": {}
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
       },
       "id": "9b991666-0848-4bae-bdb3-82e43d2f5d6e",
       "name": "Google Sheets",
       "type": "n8n-nodes-base.googleSheets",
       "typeVersion": 4.4,
       "position": [
-        820,
-        100
+        1080,
+        300
       ],
       "credentials": {
         "googleSheetsOAuth2Api": {
@@ -875,6 +907,7 @@
           "name": "Google Sheets account"
         }
       },
+      "disabled": true,
       "onError": "continueRegularOutput"
     },
     {
@@ -965,6 +998,516 @@
         100
       ],
       "webhookId": "bff8487b-d160-46ff-86be-34f85c55d3f7"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1vqeC_RAw9xGty6aVCUNRQkPlO3_N7ysH0zkYOUg1g7Y/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Leads Recebidos",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1vqeC_RAw9xGty6aVCUNRQkPlO3_N7ysH0zkYOUg1g7Y/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Qual é o seu melhor e-mail?": "={{ $node[\"Edit Fields\"].json[\"content\"][\"body\"][\"respondent\"][\"answers\"][\"Qual é o seu melhor e-mail?\"] }}",
+            "Qual é o seu nome?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Qual é o seu nome?\"] }}",
+            "Qual é o seu número de Whatsapp?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Qual é o seu número de Whatsapp?\"] }}",
+            "Hoje o seu salário/ renda:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Hoje o seu salário/ renda:\"] }}",
+            "Nos últimos 12 meses, você alguma vez parcelou a fatura do cartão de crédito ou usou o cheque especial?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Nos últimos 12 meses, você alguma vez parcelou a fatura do cartão de crédito ou usou o cheque especial?\"] }}",
+            "Você tem algum tipo de financiamento/ FIES?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você tem algum tipo de financiamento/ FIES?\"] }}",
+            "Você tem algum tipo de empréstimo ou consignado em processo de pagamento?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você tem algum tipo de empréstimo ou consignado em processo de pagamento?\"] }}",
+            "Você tem título de capitalização?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você tem título de capitalização?\"] }}",
+            "Você sabe a quantidade exata de renda que gerou nos últimos 12 meses?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você sabe a quantidade exata de renda que gerou nos últimos 12 meses?\"] }}",
+            "Você sabe extamente quanto custa o seu estilo de vida atual?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você sabe extamente quanto custa o seu estilo de vida atual?\"] }}",
+            "Você sabe fazer seus investimentos sozinha?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você sabe fazer seus investimentos sozinha?\"] }}",
+            "Com o dinheiro que você tem poupado hoje, quantos meses você, seus dependentes conseguiriam viver sem precisar gerar mais renda?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Com o dinheiro que você tem poupado hoje, quantos meses você, seus dependentes conseguiriam viver sem precisar gerar mais renda?\"] }}",
+            "O seu dinheiro poupado está:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"O seu dinheiro poupado está:\"] }}",
+            "Se seu gerente de banco ou assessor de investimento te oferece uma LC que rende 90% do CDI, você consegue dizer se é algo bom ou ruim?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Se seu gerente de banco ou assessor de investimento te oferece uma LC que rende 90% do CDI, você consegue dizer se é algo bom ou ruim?\"] }}",
+            "Você sabe fazer dinheiro durante suas compras com cartão de crédito?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você sabe fazer dinheiro durante suas compras com cartão de crédito?\"] }}",
+            "Você sente culpa após suas compras?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você sente culpa após suas compras?\"] }}",
+            "Qual seu plano financeiro pessoal para a sua aposentadoria?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Qual seu plano financeiro pessoal para a sua aposentadoria?\"] }}",
+            "Você acha que é necessário e importante pagar o teto do INSS para ter uma boa aposentadoria?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você acha que é necessário e importante pagar o teto do INSS para ter uma boa aposentadoria?\"] }}",
+            "Você sabe como seguro de vida e plano de saúde compõe um planejamento financeiro maduro?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você sabe como seguro de vida e plano de saúde compõe um planejamento financeiro maduro?\"] }}",
+            "Sobre o cenário econômico atual, você acha que:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Sobre o cenário econômico atual, você acha que:\"] }}",
+            "Você ainda paga taxa, tarifa bancária e/ou anuidade de cartão de crédito?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você ainda paga taxa, tarifa bancária e/ou anuidade de cartão de crédito?\"] }}",
+            "Imagine que algum imprevisto financeiro surgiu durante o seu ano. Você sabe como fazer o balanceamento do seu orçamento para se ajustar a nova realidade?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Imagine que algum imprevisto financeiro surgiu durante o seu ano. Você sabe como fazer o balanceamento do seu orçamento para se ajustar a nova realidade?\"] }}",
+            "Qual a sua idade?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Qual a sua idade?\"] }}",
+            "Em média, sua renda PESSOAL em reais é:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Em média, sua renda PESSOAL em reais é:\"] }}",
+            "Em média, sua renda FAMILIAR em reais é:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Em média, sua renda FAMILIAR em reais é:\"] }}",
+            "Qual o seu nível de escolaridade?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Qual o seu nível de escolaridade?\"] }}",
+            "Qual é a sua profissão?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Qual é a sua profissão?\"] }}",
+            "Por que seria bom ter mais dinheiro? Escolha até 3 opções que mais te movem.": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Por que seria bom ter mais dinheiro? Escolha até 3 opções que mais te movem.\"] }}",
+            "Me conte um sonho que você gostaria muito de realizar este ano:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Me conte um sonho que você gostaria muito de realizar este ano:\"] }}",
+            "Me conte um sonho que você gostaria muito de realizar nos próximos 5 anos:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Me conte um sonho que você gostaria muito de realizar nos próximos 5 anos:\"] }}",
+            "Me conte um medo que você tem em relação ao seu futuro:": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Me conte um medo que você tem em relação ao seu futuro:\"] }}",
+            "Hoje, qual é a sua maior dificuldade em relação às finanças & investimentos?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Hoje, qual é a sua maior dificuldade em relação às finanças & investimentos?\"] }}",
+            "Na sua opinião, o que o dinheiro significa para você?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Na sua opinião, o que o dinheiro significa para você?\"] }}",
+            "Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?\"] }}",
+            "O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?\"] }}",
+            "Numa escala de 1 a 10, o quanto você está comprometida em mudar a sua vida financeira?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Numa escala de 1 a 10, o quanto você está comprometida em mudar a sua vida financeira?\"] }}",
+            "Há quanto tempo você conhece a Ítala e/ou a Multiplique?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Há quanto tempo você conhece a Ítala e/ou a Multiplique?\"] }}",
+            "Por onde você conheceu a Ítala e/ou Multiplique": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Por onde você conheceu a Ítala e/ou Multiplique\"] }}",
+            "Você já fez algum outro curso/treinamento com a Ítala/Multiplique?": "={{ $('Edit Fields').item.json.content.body.respondent.answers[\"Você já fez algum outro curso/treinamento com a Ítala/Multiplique?\"] }}",
+            "Pontuação": "={{ $('Edit Fields').item.json.content.body.respondent.score }}",
+            "ID": "={{ $('Edit Fields').item.json.content.body.respondent.respondent_id }}",
+            "Data": "={{ $json.Data }}"
+          },
+          "matchingColumns": [
+            "Qual é o seu melhor e-mail?"
+          ],
+          "schema": [
+            {
+              "id": "Data",
+              "displayName": "Data",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qual é o seu nome?",
+              "displayName": "Qual é o seu nome?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qual é o seu melhor e-mail?",
+              "displayName": "Qual é o seu melhor e-mail?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Qual é o seu número de Whatsapp?",
+              "displayName": "Qual é o seu número de Whatsapp?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hoje o seu salário/ renda:",
+              "displayName": "Hoje o seu salário/ renda:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Nos últimos 12 meses, você alguma vez parcelou a fatura do cartão de crédito ou usou o cheque especial?",
+              "displayName": "Nos últimos 12 meses, você alguma vez parcelou a fatura do cartão de crédito ou usou o cheque especial?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você tem algum tipo de financiamento/ FIES?",
+              "displayName": "Você tem algum tipo de financiamento/ FIES?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você tem algum tipo de empréstimo ou consignado em processo de pagamento?",
+              "displayName": "Você tem algum tipo de empréstimo ou consignado em processo de pagamento?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você tem título de capitalização?",
+              "displayName": "Você tem título de capitalização?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você sabe a quantidade exata de renda que gerou nos últimos 12 meses?",
+              "displayName": "Você sabe a quantidade exata de renda que gerou nos últimos 12 meses?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você sabe extamente quanto custa o seu estilo de vida atual?",
+              "displayName": "Você sabe extamente quanto custa o seu estilo de vida atual?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você sabe fazer seus investimentos sozinha?",
+              "displayName": "Você sabe fazer seus investimentos sozinha?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Com o dinheiro que você tem poupado hoje, quantos meses você, seus dependentes conseguiriam viver sem precisar gerar mais renda?",
+              "displayName": "Com o dinheiro que você tem poupado hoje, quantos meses você, seus dependentes conseguiriam viver sem precisar gerar mais renda?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "O seu dinheiro poupado está:",
+              "displayName": "O seu dinheiro poupado está:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Se seu gerente de banco ou assessor de investimento te oferece uma LC que rende 90% do CDI, você consegue dizer se é algo bom ou ruim?",
+              "displayName": "Se seu gerente de banco ou assessor de investimento te oferece uma LC que rende 90% do CDI, você consegue dizer se é algo bom ou ruim?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você sabe fazer dinheiro durante suas compras com cartão de crédito?",
+              "displayName": "Você sabe fazer dinheiro durante suas compras com cartão de crédito?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você sente culpa após suas compras?",
+              "displayName": "Você sente culpa após suas compras?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qual seu plano financeiro pessoal para a sua aposentadoria?",
+              "displayName": "Qual seu plano financeiro pessoal para a sua aposentadoria?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você acha que é necessário e importante pagar o teto do INSS para ter uma boa aposentadoria?",
+              "displayName": "Você acha que é necessário e importante pagar o teto do INSS para ter uma boa aposentadoria?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você sabe como seguro de vida e plano de saúde compõe um planejamento financeiro maduro?",
+              "displayName": "Você sabe como seguro de vida e plano de saúde compõe um planejamento financeiro maduro?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Sobre o cenário econômico atual, você acha que:",
+              "displayName": "Sobre o cenário econômico atual, você acha que:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você ainda paga taxa, tarifa bancária e/ou anuidade de cartão de crédito?",
+              "displayName": "Você ainda paga taxa, tarifa bancária e/ou anuidade de cartão de crédito?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Imagine que algum imprevisto financeiro surgiu durante o seu ano. Você sabe como fazer o balanceamento do seu orçamento para se ajustar a nova realidade?",
+              "displayName": "Imagine que algum imprevisto financeiro surgiu durante o seu ano. Você sabe como fazer o balanceamento do seu orçamento para se ajustar a nova realidade?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qual a sua idade?",
+              "displayName": "Qual a sua idade?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Em média, sua renda PESSOAL em reais é:",
+              "displayName": "Em média, sua renda PESSOAL em reais é:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Em média, sua renda FAMILIAR em reais é:",
+              "displayName": "Em média, sua renda FAMILIAR em reais é:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qual o seu nível de escolaridade?",
+              "displayName": "Qual o seu nível de escolaridade?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Qual é a sua profissão?",
+              "displayName": "Qual é a sua profissão?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Por que seria bom ter mais dinheiro? Escolha até 3 opções que mais te movem.",
+              "displayName": "Por que seria bom ter mais dinheiro? Escolha até 3 opções que mais te movem.",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Me conte um sonho que você gostaria muito de realizar este ano:",
+              "displayName": "Me conte um sonho que você gostaria muito de realizar este ano:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Me conte um sonho que você gostaria muito de realizar nos próximos 5 anos:",
+              "displayName": "Me conte um sonho que você gostaria muito de realizar nos próximos 5 anos:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Me conte um medo que você tem em relação ao seu futuro:",
+              "displayName": "Me conte um medo que você tem em relação ao seu futuro:",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hoje, qual é a sua maior dificuldade em relação às finanças & investimentos?",
+              "displayName": "Hoje, qual é a sua maior dificuldade em relação às finanças & investimentos?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Na sua opinião, o que o dinheiro significa para você?",
+              "displayName": "Na sua opinião, o que o dinheiro significa para você?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?",
+              "displayName": "Por que você fez a inscrição no evento A ORIGEM DA RIQUEZA?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?",
+              "displayName": "O que você quer ver no evento que vai te fazer muito feliz e satisfeita em participar dele?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Numa escala de 1 a 10, o quanto você está comprometida em mudar a sua vida financeira?",
+              "displayName": "Numa escala de 1 a 10, o quanto você está comprometida em mudar a sua vida financeira?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Há quanto tempo você conhece a Ítala e/ou a Multiplique?",
+              "displayName": "Há quanto tempo você conhece a Ítala e/ou a Multiplique?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Por onde você conheceu a Ítala e/ou Multiplique",
+              "displayName": "Por onde você conheceu a Ítala e/ou Multiplique",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Você já fez algum outro curso/treinamento com a Ítala/Multiplique?",
+              "displayName": "Você já fez algum outro curso/treinamento com a Ítala/Multiplique?",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Pontuação",
+              "displayName": "Pontuação",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ID",
+              "displayName": "ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_source",
+              "displayName": "utm_source",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_medium",
+              "displayName": "utm_medium",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_campaign",
+              "displayName": "utm_campaign",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_term",
+              "displayName": "utm_term",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "utm_content",
+              "displayName": "utm_content",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "33e1633a-f45d-461b-9bb7-ff8a74dc1605",
+      "name": "Google Sheets1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        820,
+        100
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0YSzQ2Z3Op1rzk4l",
+          "name": "Google Sheets account"
+        }
+      }
     }
   ],
   "pinData": {},
@@ -974,6 +1517,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-08-09T13:11:47.490Z",
-  "versionId": "43c39041-4859-45f3-af07-f87983d8d985"
+  "updatedAt": "2024-08-14T18:51:15.297Z",
+  "versionId": "f748d96a-296f-4847-a7d6-3a91b2167bd4"
 }
