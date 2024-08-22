@@ -1,0 +1,310 @@
+{
+  "active": true,
+  "connections": {
+    "Trata dados": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign2": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ActiveCampaign3": {
+      "main": [
+        [
+          {
+            "node": "ActiveCampaign4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Trata dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-08-21T20:10:10.529Z",
+  "id": "dWP8d2WL9P07APNz",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "[PLANILHA/MANYCHAT] - Manychat > AC > Automação",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "return typeof $node[\"Webhook\"].json[\"body\"] == 'string' ? JSON.parse($node[\"Webhook\"].json[\"body\"]) : $node[\"Webhook\"].json[\"body\"]\n"
+      },
+      "id": "a46a258d-6a2d-4120-9875-24a38ec8730f",
+      "name": "Trata dados",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        200
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "af40a53a-59c5-4752-a518-ecce507e2a77",
+              "name": "NOME",
+              "value": "={{ $json[\"nome\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}",
+              "type": "string"
+            },
+            {
+              "id": "82ed55cd-648a-4c66-8cd6-66eab97faee4",
+              "name": "EMAIL",
+              "value": "={{ $json[\"email\"].toLowerCase().replace(' ','') }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cc68b60f-6573-4b2b-8275-6abb3851936a",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1300,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "function formataTelefone(number) {\n    number = number.toString().replace(/[^\\d]/g, \"\")\n    let ddi = '55'\n    let ddd = number.substring(0, 2)\n\n    if (number.length == 13) {\n        let ddi = number.substring(0, 2)\n        let ddd = number.substring(2, 4)\n        return ddi + ddd + (ddd <= 28 ? number.substring(4, 13) : number.substring(5, 13))\n\n    } else if (number.length == 11) {\n        return ddi + ddd + (ddd <= 28 ? number.substring(2, 11) : number.substring(3, 11))\n\n    } else if (number.length == 10) {\n        return ddi + ddd + (ddd <= 28 ? '9' : '') + number.substring(2, 11)\n\n    } else if (number.length == 12) {\n        return number.substring(0, 2) == '55' ? number : (number.substring(0, 1) == '0' ? formataTelefone(number.substring(1, 12)) : number)\n\n    } else {\n        return number\n    }\n}\n\nreturn { Telefone : formataTelefone($input.all()[0].json['TELEFONE']) };"
+      },
+      "id": "2f7e5aea-2aea-41a3-93c1-7b855739be02",
+      "name": "telefone_active",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1320,
+        380
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "additionalFields": {
+          "email": "={{ $node[\"Edit Fields\"].json[\"EMAIL\"] }}"
+        }
+      },
+      "id": "12d7bc0b-b9fb-4590-9b56-acc20d38909f",
+      "name": "ActiveCampaign",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1540,
+        380
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "contactId": "={{ $json[\"id\"] }}",
+        "updateFields": {
+          "email": "={{ $node[\"Edit Fields\"].json[\"EMAIL\"] }}",
+          "phone": "=+{{ $node[\"telefone_active\"].json[\"Telefone\"] }}"
+        }
+      },
+      "id": "14209438-4c1e-4660-b706-9b7f6a536751",
+      "name": "ActiveCampaign1",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        380
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "af40a53a-59c5-4752-a518-ecce507e2a77",
+              "name": "NOME",
+              "value": "={{ $json[\"nome\"].toLowerCase().replace(/\\b\\w/g, char => char.toUpperCase()) }}",
+              "type": "string"
+            },
+            {
+              "id": "82ed55cd-648a-4c66-8cd6-66eab97faee4",
+              "name": "EMAIL",
+              "value": "={{ $json[\"email\"].toLowerCase().replace(' ','') }}",
+              "type": "string"
+            },
+            {
+              "id": "f1b91f68-443a-4ae7-9d46-7f92cc9756cd",
+              "name": "TELEFONE",
+              "value": "={{ $json[\"telefone\"].replace(\"+\",\"\") }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "9072c1fe-0fc5-4074-906f-29564e44d5e5",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1120,
+        380
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "email": "={{ $json.EMAIL }}",
+        "updateIfExists": true,
+        "additionalFields": {
+          "firstName": "={{ $json.NOME }}"
+        }
+      },
+      "id": "b1680731-d525-4d1d-92a8-287e41a94f31",
+      "name": "ActiveCampaign2",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1520,
+        200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactList",
+        "listId": "=21",
+        "contactId": "={{ $json.id }}"
+      },
+      "id": "9179270a-25e6-435a-9d1f-2351ecbfb8aa",
+      "name": "ActiveCampaign3",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contactTag",
+        "tagId": "2324",
+        "contactId": "={{ $('ActiveCampaign2').item.json.id }}"
+      },
+      "id": "1956493f-b75f-4743-85fa-b5c231629632",
+      "name": "ActiveCampaign4",
+      "type": "n8n-nodes-base.activeCampaign",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        200
+      ],
+      "credentials": {
+        "activeCampaignApi": {
+          "id": "eSTdObDZd8TWPMW9",
+          "name": "ActiveCampaign account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "dados-manychat-active",
+        "options": {}
+      },
+      "id": "bb488c89-8cf3-4555-991a-6311115d55fa",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        720,
+        200
+      ],
+      "webhookId": "6f66de48-b3d5-4845-861f-f9e580eb234b"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-08-21T22:04:11.766Z",
+  "versionId": "cc528c97-6631-469d-a2bc-d1edd728563e"
+}
