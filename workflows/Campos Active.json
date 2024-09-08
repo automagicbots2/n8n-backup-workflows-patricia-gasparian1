@@ -1,0 +1,1855 @@
+{
+  "active": false,
+  "connections": {
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "Define Chaves de API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Define Informações do Perpétuo": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Venda - UTM_Source\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Define Chaves de API": {
+      "main": [
+        [
+          {
+            "node": "Define Informações do Perpétuo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Captação - UTM_Source\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Captação - UTM_Source\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Captação - UTM_Source\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Captação - UTM_Campaign\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Captação - UTM_Campaign\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Captação - UTM_Campaign\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Captação - UTM_Campaign\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Captação - UTM_Medium\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Captação - UTM_Term\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Captação - UTM_Term\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Captação - UTM_Term\" com Listas1": {
+      "main": [
+        []
+      ]
+    },
+    "Cria \"Captação - UTM_Medium\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Captação - UTM_Medium\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Captação - UTM_Medium\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Captação - UTM_Content\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Captação - UTM_Content\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Captação - UTM_Content\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Captação - UTM_Content\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Captação - UTM_Term\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Venda - UTM_Source\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Source\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Source\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Venda - UTM_Campaign\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Venda - UTM_Campaign\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Campaign\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Campaign\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Venda - UTM_Medium\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Venda - UTM_Term\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Term\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Venda - UTM_Medium\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Medium\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Medium\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Venda - UTM_Content\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Venda - UTM_Content\"1": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Content\" com Listas1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Content\" com Listas1": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Venda - UTM_Term\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Data de Cadastro\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Data de Cadastro\" com Listas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Data de Cadastro\" com Listas": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Captação - UTM_Source\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Link do Boleto\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Link do Boleto\" com Listas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Link do Boleto\" com Listas": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Confirmado\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Define Opções da Caixa de Seleção do Status2": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Status\" com Listas2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Status\" com Listas2": {
+      "main": [
+        [
+          {
+            "node": "Cria \"ENTROU EM RECUPERAÇÃO\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Status\"1": {
+      "main": [
+        [
+          {
+            "node": "Define Opções da Caixa de Seleção do Status2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"ENTROU EM RECUPERAÇÃO\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"ENTROU EM RECUPERAÇÃO\" com Listas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"ENTROU EM RECUPERAÇÃO\" com Listas": {
+      "main": [
+        [
+          {
+            "node": "Cria \"DATA DA COMPRA\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"DATA DA COMPRA\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"DATA DA COMPRA\" com Listas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"DATA DA COMPRA\" com Listas": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Link do Boleto\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Term\" com Listas1": {
+      "main": [
+        []
+      ]
+    },
+    "Cria \"Pagina de Captura\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Term\" com Listas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Participou Lancamento Anterior\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Venda - UTM_Term\" com Listas2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Term\" com Listas": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Participou Lancamento Anterior\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria \"Confirmado\"": {
+      "main": [
+        [
+          {
+            "node": "Relaciona \"Confirmado\" com Listas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Relaciona \"Venda - UTM_Term\" com Listas2": {
+      "main": [
+        [
+          {
+            "node": "Cria \"Status\"1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-09-07T19:07:33.813Z",
+  "id": "YKF5QjkICt23ZFvz",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Campos Active",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3852c282-e9dd-45eb-9969-268bd3d259f0",
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1620,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "Construtor de Páginas",
+              "value": "Greatpages"
+            },
+            {
+              "name": "Sigla do Produto",
+              "value": "MDR"
+            },
+            {
+              "name": "Gateway de Pagamento",
+              "value": "Guru"
+            },
+            {
+              "name": "Nome da Expert/Empresa",
+              "value": "Itala"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "39c0f5f4-2f39-4e1d-ba78-c4fe47491c77",
+      "name": "Define Informações do Perpétuo",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1240,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "URL de API do ActiveCampaign",
+              "value": "https://multipliquecoisasboas.api-us1.com"
+            },
+            {
+              "name": "Chave de API do ActiveCampaign",
+              "value": "f886334d9a1f9274b97168c8efa2033d20fe476c75353981dc7fcf053e4cda3b9f5de97d"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "64761ddb-fcb8-49fc-92a3-aaef7d1d08f2",
+      "name": "Define Chaves de API",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -1420,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Source\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_SOURCE\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "476d19ff-2291-48ca-8791-f7d0ef9ddf78",
+      "name": "Cria \"Captação - UTM_Source\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -700,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "c89b0acd-b9a7-4c8d-8194-8e47503eaa51",
+      "name": "Relaciona \"Captação - UTM_Source\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -580,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Campaign\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_CAMPAIGN\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "e3539499-7ddb-45e4-b409-5f2666e7bf50",
+      "name": "Cria \"Captação - UTM_Campaign\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -440,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "1b24342b-959c-42ac-a8ac-edf16e39f4c5",
+      "name": "Relaciona \"Captação - UTM_Campaign\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -280,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Term\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_TERM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "f3f5201a-ff3e-48d7-9e48-ebda4191d777",
+      "name": "Cria \"Captação - UTM_Term\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        460,
+        460
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "32c684aa-9f14-47ab-a9d1-d15a63ce4b76",
+      "name": "Relaciona \"Captação - UTM_Term\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        580,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Medium\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_MEDIUM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "b91c2d07-cf2b-4f0b-841d-491bce66cb25",
+      "name": "Cria \"Captação - UTM_Medium\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -120,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "bf7c2413-3001-48ad-81bc-3d352666af2f",
+      "name": "Relaciona \"Captação - UTM_Medium\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        20,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Content\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_CONTENT\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "0fb65a00-a489-44ee-9513-5226f4fb16ec",
+      "name": "Cria \"Captação - UTM_Content\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        160,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "2565e5f0-d02c-4c6b-9ba2-a287095506d6",
+      "name": "Relaciona \"Captação - UTM_Content\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        300,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Source\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_SOURCE\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "efa3eb76-4876-48c8-b741-2bc5a77aacef",
+      "name": "Cria \"Venda - UTM_Source\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        720,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "369590f1-d536-460e-ba6f-6a306469e3be",
+      "name": "Relaciona \"Venda - UTM_Source\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        860,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Campaign\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_CAMPAIGN\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "82acad65-bdeb-45f9-bbc0-e9eb3fe18a6d",
+      "name": "Cria \"Venda - UTM_Campaign\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        980,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "b0b4f87e-ee97-4b67-b481-5bca8f35528c",
+      "name": "Relaciona \"Venda - UTM_Campaign\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Term\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_TERM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "31fa31b2-bfdc-403d-aefe-a077d38dfb45",
+      "name": "Cria \"Venda - UTM_Term\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1740,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "57784fce-4764-4ebb-815b-c75669362f85",
+      "name": "Relaciona \"Venda - UTM_Term\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1860,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Medium\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_MEDIUM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "e1e21c6f-2b40-4c7e-aeb0-d8bff66a97a1",
+      "name": "Cria \"Venda - UTM_Medium\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1240,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "62428397-8fcc-4428-97e0-f008e8c07591",
+      "name": "Relaciona \"Venda - UTM_Medium\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1360,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Content\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_CONTENT\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "23554fa0-91ad-4776-83e7-7b752be1a854",
+      "name": "Cria \"Venda - UTM_Content\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1480,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "90d0d638-aec4-4951-9332-904713e5d253",
+      "name": "Relaciona \"Venda - UTM_Content\" com Listas1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1620,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] - Data de Cadastro\",\n\"type\": \"date\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_DATA_DE_CADASTRO\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "039305c8-95dc-4597-9d1a-677ec8badbfe",
+      "name": "Cria \"Data de Cadastro\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1080,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "8c2b50bd-e886-4e05-a938-5fa49f84ae2f",
+      "name": "Relaciona \"Data de Cadastro\" com Listas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -900,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Link do Boleto\",\n\"type\": \"text\",\n\"perstag\": \"{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_LINK_DO_BOLETO\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "d8934a5f-8c57-4535-8299-390dae87318c",
+      "name": "Cria \"Link do Boleto\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -540,
+        1080
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "ad788a76-9b4b-4556-8667-c74469bfc662",
+      "name": "Relaciona \"Link do Boleto\" com Listas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -360,
+        1280
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldOption/bulk",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n  \"fieldOptions\": [\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"aprovada\", \"value\": \"aprovada\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"recuperada\", \"value\": \"recuperada\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"abandono\", \"value\": \"abandono\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"cancelada\", \"value\": \"cancelada\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"boleto\", \"value\": \"boleto\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"pix\", \"value\": \"pix\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"cancelada-sem saldo\", \"value\": \"cancelada-sem saldo\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"cancelada-nao aprovada\", \"value\": \"cancelada-nao aprovada\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"expirada\", \"value\": \"expirada\" },\n    { \"field\": {{ $json[\"field\"][\"id\"] }}, \"label\": \"reembolsada\", \"value\": \"reembolsada\" }\n  ]\n}\n",
+        "options": {}
+      },
+      "id": "d1897159-95b0-4bf6-9f16-145ae5f1a627",
+      "name": "Define Opções da Caixa de Seleção do Status2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1480,
+        1200
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"fieldOptions\"][\"0\"][\"field\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "96632a14-8322-40a6-a053-32eda5acc610",
+      "name": "Relaciona \"Status\" com Listas2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1340,
+        1300
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"field\": { \"type\": \"dropdown\", \"title\": \"[{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] STATUS DA COMPRA\", \"perstag\": \"{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_STATUS_DA_COMPRA\", \"visible\": 1, \"ordernum\": 1, \"show_in_list\": true } }",
+        "options": {}
+      },
+      "id": "774f88cb-8dc5-4378-a104-8a7a61d02cdc",
+      "name": "Cria \"Status\"1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1620,
+        1100
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"ordernum\": 1,\n\"title\": \"[{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] ENTROU EM RECUPERAÇÃO\",\n\"type\": \"date\",\n\"perstag\": \"{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_ENTROU_EM_RECUPERACAO\",\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "b2a46dc6-ebdb-4eaf-aeb8-b2c151d59a3c",
+      "name": "Cria \"ENTROU EM RECUPERAÇÃO\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1160,
+        1100
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "b7f35e00-5d8e-4444-ace0-5dbd61cbae56",
+      "name": "Relaciona \"ENTROU EM RECUPERAÇÃO\" com Listas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -1000,
+        1280
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"ordernum\": 1,\n\"title\": \"[{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] DATA DA COMPRA\",\n\"type\": \"date\",\n\"perstag\": \"{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_DATA_DA_COMPRA\",\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "fcf6c697-b855-441c-9ee5-a57a8fcc0019",
+      "name": "Cria \"DATA DA COMPRA\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -840,
+        1100
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "072c5d5a-d8f5-4165-82d7-7ed134475972",
+      "name": "Relaciona \"DATA DA COMPRA\" com Listas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -700,
+        1280
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "amount": 10,
+        "unit": "seconds"
+      },
+      "id": "aac59bf6-46bb-481d-983e-b2d43e3f5f1f",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        620,
+        1380
+      ],
+      "webhookId": "8b8d0ac4-9247-4b1d-beda-b0b026a21ba9"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "9cebfe06-dd59-425e-a890-b884a3438604",
+      "name": "Relaciona \"Venda - UTM_Term\" com Listas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2180,
+        680
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Pagina de Captura\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_PAGINA_DE_CAPTURA\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "8a5a10e5-bbd0-4be1-8be3-6a9ee36d7786",
+      "name": "Cria \"Pagina de Captura\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2060,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "e40ba2a1-c1c0-4b66-a206-7df6603355a9",
+      "name": "Relaciona \"Venda - UTM_Term\" com Listas2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2480,
+        660
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}]   Participou Lancamento Anterior\",\n\"type\": \"text\",\n\"perstag\": \"{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_PARTICIPOU_LANCAMENTO_ANTERIOR\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "aed7227a-81ce-4ebe-8a35-3d28b571d3b9",
+      "name": "Cria \"Participou Lancamento Anterior\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        2320,
+        480
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fields",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}]  Confirmado\",\n\"type\": \"text\",\n\"perstag\": \"{{ $node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CONFIRMADO\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "options": {}
+      },
+      "id": "fbcaf1ab-bce3-4393-bf2b-0d550345f12c",
+      "name": "Cria \"Confirmado\"",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        120,
+        1080
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"URL de API do ActiveCampaign\"] }}/api/3/fieldRels",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Api-Token",
+              "value": "={{ $item(\"0\").$node[\"Define Chaves de API\"].json[\"Chave de API do ActiveCampaign\"] }}"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "body": "={ \"fieldRel\": { \"field\": {{ $json[\"field\"][\"id\"] }}, \"relid\": 0 } }",
+        "options": {}
+      },
+      "id": "80c683ee-aa91-4940-bd90-771f7b3774cc",
+      "name": "Relaciona \"Confirmado\" com Listas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        280,
+        1280
+      ],
+      "continueOnFail": true
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-09-07T19:09:28.182Z",
+  "versionId": "b840dd93-e1cb-49aa-8077-1f58efc5b143"
+}
