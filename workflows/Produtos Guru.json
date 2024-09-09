@@ -1,0 +1,37 @@
+{
+  "active": true,
+  "connections": {},
+  "createdAt": "2024-09-09T14:59:32.015Z",
+  "id": "yQRqya1XKLiH3LKf",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Produtos Guru",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "guru-todos-produtos",
+        "options": {}
+      },
+      "id": "53da7b33-d0a1-439a-b55f-73239f304d3d",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        500,
+        340
+      ],
+      "webhookId": "891ffdf8-1af7-462a-8a52-89e5cae50e67"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-09T14:59:58.573Z",
+  "versionId": "a4f084b9-2088-44d7-bc34-2d62638221c7"
+}
