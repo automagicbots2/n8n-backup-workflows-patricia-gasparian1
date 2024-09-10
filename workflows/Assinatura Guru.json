@@ -1,0 +1,37 @@
+{
+  "active": true,
+  "connections": {},
+  "createdAt": "2024-09-09T15:05:25.833Z",
+  "id": "yYtyzJHadxrSNjtt",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Assinatura Guru",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "assinatura-guru-todos-produtos",
+        "options": {}
+      },
+      "id": "da504e89-807b-4ce8-8565-2abb843b618f",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        500,
+        340
+      ],
+      "webhookId": "1157f425-9ec7-41df-8089-64af7a468add"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-09T15:07:49.206Z",
+  "versionId": "9b3970cf-5ed0-4915-9717-0f75055cb1fb"
+}
