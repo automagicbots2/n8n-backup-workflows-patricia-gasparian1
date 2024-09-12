@@ -1,6 +1,84 @@
 {
   "active": true,
-  "connections": {},
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "RabbitMQ",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RabbitMQ Trigger": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "Date & Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time": {
+      "main": [
+        [
+          {
+            "node": "Date & Time1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Date & Time1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
   "createdAt": "2024-09-09T15:05:25.833Z",
   "id": "yYtyzJHadxrSNjtt",
   "meta": {
@@ -10,17 +88,495 @@
   "nodes": [
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fb371ad9-c1d5-41a2-8c78-bf3c40a08782",
+              "name": "cliente.last_transaction.contact.name",
+              "value": "={{ $json.body.last_transaction.contact.name }}",
+              "type": "string"
+            },
+            {
+              "id": "80985743-8ab0-4c9e-94d4-90b0797c4dba",
+              "name": "cliente.last_transaction.contact.email",
+              "value": "={{ $json.body.last_transaction.contact.email }}",
+              "type": "string"
+            },
+            {
+              "id": "ae6711f8-e27b-4e82-a535-172c8d4d9541",
+              "name": "cliente.last_transaction.contact.doc",
+              "value": "={{ $json.body.last_transaction.contact.doc }}",
+              "type": "string"
+            },
+            {
+              "id": "7469ceef-5a60-4d18-905b-2010a16c5e78",
+              "name": "cliente.last_transaction.contact.phone_number",
+              "value": "={{ $json.body.last_transaction.contact.phone_local_code }}{{ $json.body.last_transaction.contact.phone_number }}",
+              "type": "string"
+            },
+            {
+              "id": "a4e95855-a976-45a7-9d60-00515247ba33",
+              "name": "compra.last_transaction.invoice.period_start",
+              "value": "={{ $json.body.last_transaction.invoice.period_start }}",
+              "type": "string"
+            },
+            {
+              "id": "3ae3ab49-adec-4b19-92ec-fb43946aaad4",
+              "name": "compra.last_transaction.invoice.period_end",
+              "value": "={{ $json.body.last_transaction.invoice.period_end }}",
+              "type": "string"
+            },
+            {
+              "id": "8cd0a4fd-58fb-4ff6-8ad9-5819f5ba9275",
+              "name": "compra.last_transaction.invoice.value",
+              "value": "={{ $json.body.last_transaction.invoice.value }}",
+              "type": "number"
+            },
+            {
+              "id": "64818355-efca-4cdd-a18f-fff1546974e0",
+              "name": "compra.last_transaction.product.name",
+              "value": "={{ $json.body.last_transaction.product.name }}",
+              "type": "string"
+            },
+            {
+              "id": "995dc4e9-2c8e-44d6-8984-28f64dc8e852",
+              "name": "compra.last_transaction.product.offer.id",
+              "value": "={{ $json.body.last_transaction.product.offer.id }}",
+              "type": "string"
+            },
+            {
+              "id": "6408e5e8-9a85-4e77-b2e0-e23e5b99dc6f",
+              "name": "compra.last_transaction.product.offer.name",
+              "value": "={{ $json.body.last_transaction.product.offer.name }}",
+              "type": "string"
+            },
+            {
+              "id": "10203e44-860d-49cf-a1e1-cc59b64b7a63",
+              "name": "compra.next_product.offer.plan.cycles",
+              "value": "={{ $json.body.next_product.offer.plan.cycles }}",
+              "type": "number"
+            },
+            {
+              "id": "1f1abc91-2d22-47e1-a20f-99b0a0077c63",
+              "name": "compra.payment_method",
+              "value": "={{ $json.body.payment_method }}",
+              "type": "string"
+            },
+            {
+              "id": "02f2c606-6d07-405c-a928-c8debfbd0bf1",
+              "name": "compra.current_invoice.cycle",
+              "value": "={{ $json.body.current_invoice.cycle }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "68a7f6ac-a307-4cbf-bff3-5b7215bb34b3",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1060,
+        500
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "financeiro",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          }
+        }
+      },
+      "id": "5d107489-1dfb-4c8b-81dd-da87f7318d15",
+      "name": "RabbitMQ",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1.1,
+      "position": [
+        1260,
+        500
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "PkbETTrkHAqxKxr4",
+          "name": "RabbitMQ account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "queue": "financeiro",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          },
+          "jsonParseBody": true,
+          "parallelMessages": 1
+        }
+      },
+      "id": "7c4020fc-a222-4321-8a68-912206dc52c3",
+      "name": "RabbitMQ Trigger",
+      "type": "n8n-nodes-base.rabbitmqTrigger",
+      "typeVersion": 1,
+      "position": [
+        860,
+        740
+      ],
+      "credentials": {
+        "rabbitmq": {
+          "id": "PkbETTrkHAqxKxr4",
+          "name": "RabbitMQ account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1c8i35ur1_lLT9uEkEn3CINjO0tdE_BR2yqfmcnbCG7A/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Página1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1c8i35ur1_lLT9uEkEn3CINjO0tdE_BR2yqfmcnbCG7A/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "DATA INICIAL": "={{ $json.compra.last_transaction.invoice.period_start }}",
+            "DATA FINAL": "={{ $json.compra.last_transaction.invoice.period_end }}",
+            "EMAIL": "={{ $json.cliente.last_transaction.contact.email }}",
+            "NOME": "={{ $json.cliente.last_transaction.contact.name }}",
+            "TELEFONE": "={{ $json.cliente.last_transaction.contact.phone_number }}",
+            "PRODUTO": "={{ $json.compra.last_transaction.product.name }}",
+            "OFERTA": "={{ $json.compra.last_transaction.product.offer.name }}",
+            "QTDE PARCELAS": "={{ $json.compra.next_product.offer.plan.cycles }}",
+            "PARCELA": "={{ $json.compra.current_invoice.cycle }}",
+            "METODO PGTO": "={{ $json.compra.payment_method }}",
+            "VALOR": "={{ $json.compra.last_transaction.invoice.value }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "DATA INICIAL",
+              "displayName": "DATA INICIAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DATA FINAL",
+              "displayName": "DATA FINAL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "EMAIL",
+              "displayName": "EMAIL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "NOME",
+              "displayName": "NOME",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TELEFONE",
+              "displayName": "TELEFONE",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PRODUTO",
+              "displayName": "PRODUTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "OFERTA",
+              "displayName": "OFERTA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "QTDE PARCELAS",
+              "displayName": "QTDE PARCELAS",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "PARCELA",
+              "displayName": "PARCELA",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "VALOR",
+              "displayName": "VALOR",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "METODO PGTO",
+              "displayName": "METODO PGTO",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "id": "e0f22d63-17af-4267-8ff6-3a794034ce9a",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [
+        1860,
+        740
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "0YSzQ2Z3Op1rzk4l",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fb371ad9-c1d5-41a2-8c78-bf3c40a08782",
+              "name": "cliente.last_transaction.contact.name",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.cliente.last_transaction.contact.name }}",
+              "type": "string"
+            },
+            {
+              "id": "80985743-8ab0-4c9e-94d4-90b0797c4dba",
+              "name": "cliente.last_transaction.contact.email",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.cliente.last_transaction.contact.email }}",
+              "type": "string"
+            },
+            {
+              "id": "ae6711f8-e27b-4e82-a535-172c8d4d9541",
+              "name": "cliente.last_transaction.contact.doc",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.cliente.last_transaction.contact.doc }}",
+              "type": "string"
+            },
+            {
+              "id": "7469ceef-5a60-4d18-905b-2010a16c5e78",
+              "name": "cliente.last_transaction.contact.phone_number",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.cliente.last_transaction.contact.phone_number }}",
+              "type": "string"
+            },
+            {
+              "id": "a4e95855-a976-45a7-9d60-00515247ba33",
+              "name": "compra.last_transaction.invoice.period_start",
+              "value": "={{ $('Date & Time').item.json.data_start }}",
+              "type": "string"
+            },
+            {
+              "id": "3ae3ab49-adec-4b19-92ec-fb43946aaad4",
+              "name": "compra.last_transaction.invoice.period_end",
+              "value": "={{ $json.data_end }}",
+              "type": "string"
+            },
+            {
+              "id": "8cd0a4fd-58fb-4ff6-8ad9-5819f5ba9275",
+              "name": "compra.last_transaction.invoice.value",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.last_transaction.invoice.value.toString().replace('.',',') }}",
+              "type": "string"
+            },
+            {
+              "id": "64818355-efca-4cdd-a18f-fff1546974e0",
+              "name": "compra.last_transaction.product.name",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.last_transaction.product.name }}",
+              "type": "string"
+            },
+            {
+              "id": "995dc4e9-2c8e-44d6-8984-28f64dc8e852",
+              "name": "compra.last_transaction.product.offer.id",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.last_transaction.product.offer.id }}",
+              "type": "string"
+            },
+            {
+              "id": "6408e5e8-9a85-4e77-b2e0-e23e5b99dc6f",
+              "name": "compra.last_transaction.product.offer.name",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.last_transaction.product.offer.name }}",
+              "type": "string"
+            },
+            {
+              "id": "10203e44-860d-49cf-a1e1-cc59b64b7a63",
+              "name": "compra.next_product.offer.plan.cycles",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.next_product.offer.plan.cycles }}",
+              "type": "number"
+            },
+            {
+              "id": "1f1abc91-2d22-47e1-a20f-99b0a0077c63",
+              "name": "compra.payment_method",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.payment_method }}",
+              "type": "string"
+            },
+            {
+              "id": "02f2c606-6d07-405c-a928-c8debfbd0bf1",
+              "name": "compra.current_invoice.cycle",
+              "value": "={{ $('RabbitMQ Trigger').item.json.content.compra.current_invoice.cycle }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "83f7be4b-0cdc-471b-b456-75e7a96742a6",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1660,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a4e95855-a976-45a7-9d60-00515247ba33",
+              "name": "compra.last_transaction.invoice.period_start",
+              "value": "={{ $json.content.compra.last_transaction.invoice.period_start }}",
+              "type": "string"
+            },
+            {
+              "id": "3ae3ab49-adec-4b19-92ec-fb43946aaad4",
+              "name": "compra.last_transaction.invoice.period_end",
+              "value": "={{ $json.content.compra.last_transaction.invoice.period_end }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "5fe052f7-b366-47c9-981e-d7fcdc2665fc",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1060,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $json.compra.last_transaction.invoice.period_start }}",
+        "format": "custom",
+        "customFormat": "dd/MM/yyyy",
+        "outputFieldName": "data_start",
+        "options": {}
+      },
+      "id": "f4024cf3-45f7-4d56-827a-d40da63a4ad5",
+      "name": "Date & Time",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "formatDate",
+        "date": "={{ $('Edit Fields2').item.json.compra.last_transaction.invoice.period_end }}",
+        "format": "custom",
+        "customFormat": "dd/MM/yyyy",
+        "outputFieldName": "data_end",
+        "options": {}
+      },
+      "id": "b71dd350-b08f-481c-933c-06642702c0d8",
+      "name": "Date & Time1",
+      "type": "n8n-nodes-base.dateTime",
+      "typeVersion": 2,
+      "position": [
+        1460,
+        740
+      ]
+    },
+    {
+      "parameters": {
         "httpMethod": "POST",
         "path": "assinatura-guru-todos-produtos",
         "options": {}
       },
-      "id": "da504e89-807b-4ce8-8565-2abb843b618f",
+      "id": "9605014f-5435-4d49-845b-d0e6e685b34e",
       "name": "Webhook",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        500,
-        340
+        860,
+        500
       ],
       "webhookId": "1157f425-9ec7-41df-8089-64af7a468add"
     }
@@ -31,7 +587,7 @@
   },
   "staticData": null,
   "tags": [],
-  "triggerCount": 1,
-  "updatedAt": "2024-09-09T15:07:49.206Z",
-  "versionId": "9b3970cf-5ed0-4915-9717-0f75055cb1fb"
+  "triggerCount": 2,
+  "updatedAt": "2024-09-12T01:43:32.771Z",
+  "versionId": "a5580955-b52d-4a67-86db-7035fc6eb94e"
 }
