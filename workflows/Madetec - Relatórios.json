@@ -1,0 +1,37 @@
+{
+  "active": true,
+  "connections": {},
+  "createdAt": "2024-09-12T22:48:42.818Z",
+  "id": "qtfpb23Q4YlSxkRu",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Madetec - Relatórios",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "active-106",
+        "options": {}
+      },
+      "id": "9eb4cbf1-63ae-44d4-bf9d-a5c38a427d63",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        700,
+        340
+      ],
+      "webhookId": "10be3985-e1c9-4467-bda2-0ffb442ef028"
+    }
+  ],
+  "pinData": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2024-09-12T22:49:11.277Z",
+  "versionId": "6a8cced8-9377-40e5-9f3b-92607d4abc02"
+}
