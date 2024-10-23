@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Cria \"Venda - UTM_Source\"1",
+            "node": "Cria \"Captação - UTM_Source\"1",
             "type": "main",
             "index": 0
           }
@@ -87,11 +87,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Relaciona \"Captação - UTM_Term\" com Listas1": {
-      "main": [
-        []
       ]
     },
     "Cria \"Captação - UTM_Medium\"1": {
@@ -358,11 +353,6 @@
         ]
       ]
     },
-    "Relaciona \"Venda - UTM_Term\" com Listas1": {
-      "main": [
-        []
-      ]
-    },
     "Cria \"Pagina de Captura\"": {
       "main": [
         [
@@ -447,7 +437,7 @@
             },
             {
               "name": "Sigla do Produto",
-              "value": "MDR"
+              "value": "BF25"
             },
             {
               "name": "Gateway de Pagamento",
@@ -1850,6 +1840,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-09-07T19:09:28.182Z",
-  "versionId": "b840dd93-e1cb-49aa-8077-1f58efc5b143"
+  "updatedAt": "2024-10-23T12:14:44.821Z",
+  "versionId": "c13a040b-5aa5-480a-89c4-b6876b3d4f83"
 }
