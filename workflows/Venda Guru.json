@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {},
   "createdAt": "2024-09-09T14:59:32.015Z",
   "id": "yQRqya1XKLiH3LKf",
@@ -32,6 +32,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-09-09T15:05:11.751Z",
+  "updatedAt": "2024-11-03T20:49:16.156Z",
   "versionId": "580ba334-64fe-4f48-a562-d2ff51ec15b0"
 }
