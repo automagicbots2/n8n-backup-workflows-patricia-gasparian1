@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Trata dados": {
       "main": [
@@ -1199,6 +1199,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-10-23T17:59:43.983Z",
+  "updatedAt": "2024-11-03T20:47:18.865Z",
   "versionId": "a0430d29-94ad-4b67-aa94-a460d03899a4"
 }
