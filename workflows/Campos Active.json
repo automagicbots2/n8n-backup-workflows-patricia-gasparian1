@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Cria \"Captação - UTM_Source\"1",
+            "node": "Cria \"Venda - UTM_Source\"1",
             "type": "main",
             "index": 0
           }
@@ -344,13 +344,7 @@
     },
     "Relaciona \"DATA DA COMPRA\" com Listas": {
       "main": [
-        [
-          {
-            "node": "Cria \"Link do Boleto\"",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     },
     "Cria \"Pagina de Captura\"": {
@@ -399,6 +393,11 @@
     },
     "Relaciona \"Venda - UTM_Term\" com Listas2": {
       "main": [
+        []
+      ]
+    },
+    "Relaciona \"Venda - UTM_Term\" com Listas1": {
+      "main": [
         [
           {
             "node": "Cria \"Status\"1",
@@ -437,7 +436,7 @@
             },
             {
               "name": "Sigla do Produto",
-              "value": "BF25"
+              "value": "MV"
             },
             {
               "name": "Gateway de Pagamento",
@@ -508,7 +507,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Source\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_SOURCE\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Source\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_SOURCE\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "476d19ff-2291-48ca-8791-f7d0ef9ddf78",
@@ -580,7 +579,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Campaign\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_CAMPAIGN\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Campaign\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_CAMPAIGN\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "e3539499-7ddb-45e4-b409-5f2666e7bf50",
@@ -652,7 +651,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Term\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_TERM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Term\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_TERM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "f3f5201a-ff3e-48d7-9e48-ebda4191d777",
@@ -724,7 +723,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Medium\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_MEDIUM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Medium\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_MEDIUM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "b91c2d07-cf2b-4f0b-841d-491bce66cb25",
@@ -796,7 +795,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Content\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_CONTENT\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Captação - UTM_Content\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_CAPTACAO_UTM_CONTENT\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "0fb65a00-a489-44ee-9513-5226f4fb16ec",
@@ -868,7 +867,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Source\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_SOURCE\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Source\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_SOURCE\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "efa3eb76-4876-48c8-b741-2bc5a77aacef",
@@ -940,7 +939,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Campaign\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_CAMPAIGN\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Campaign\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_CAMPAIGN\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "82acad65-bdeb-45f9-bbc0-e9eb3fe18a6d",
@@ -1012,7 +1011,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Term\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_TERM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Term\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_TERM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "31fa31b2-bfdc-403d-aefe-a077d38dfb45",
@@ -1084,7 +1083,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Medium\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_MEDIUM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Medium\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_MEDIUM\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "e1e21c6f-2b40-4c7e-aeb0-d8bff66a97a1",
@@ -1156,7 +1155,7 @@
         },
         "sendBody": true,
         "contentType": "raw",
-        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Content\",\n\"type\": \"hidden\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_CONTENT\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
+        "body": "={\n\"field\": {\n\"title\": \"[{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}] Venda - UTM_Content\",\n\"type\": \"text\",\n\"perstag\": \"{{ $item(\"0\").$node[\"Define Informações do Perpétuo\"].json[\"Sigla do Produto\"] }}_VENDA_UTM_CONTENT\",\n\"ordernum\": 1,\n\"show_in_list\": true\n}\n}",
         "options": {}
       },
       "id": "23554fa0-91ad-4776-83e7-7b752be1a854",
@@ -1840,6 +1839,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-10-23T12:14:44.821Z",
-  "versionId": "c13a040b-5aa5-480a-89c4-b6876b3d4f83"
+  "updatedAt": "2024-11-05T14:04:29.952Z",
+  "versionId": "7436aad4-05b3-4aca-99dd-27e98f24b70b"
 }
