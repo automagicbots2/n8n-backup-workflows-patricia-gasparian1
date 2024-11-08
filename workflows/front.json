@@ -1,0 +1,732 @@
+{
+  "active": false,
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "WTS Chat",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WTS Chat": {
+      "main": [
+        [
+          {
+            "node": "WTS Chat1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WTS Chat1": {
+      "main": [
+        [
+          {
+            "node": "WTS Chat2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-11-07T21:11:06.352Z",
+  "id": "zTLzVDQNENY7sdsG",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "front",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "6ea5a77e-61c6-4b6e-b237-0f0f80ea679b",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        600,
+        780
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "createContact",
+        "phonenumber": "5511884455771",
+        "name": "teste",
+        "email": "teste@teste.com",
+        "instagram": "testeinsta"
+      },
+      "id": "6ceb6595-2036-44ce-afc5-f97dece3844d",
+      "name": "WTS Chat",
+      "type": "n8n-nodes-wts.wtsChat",
+      "typeVersion": 1,
+      "position": [
+        820,
+        780
+      ],
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wts.chat/core/v1/contact",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "teste1"
+            },
+            {
+              "name": "phoneNumber",
+              "value": "5511999999999"
+            },
+            {
+              "name": "email",
+              "value": "teste1@teste.com"
+            },
+            {
+              "name": "instagram",
+              "value": "insta1"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "6380a998-bf96-4013-a61b-178c79c3e61a",
+      "name": "cria_contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        460
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "53f14be8-4ea4-4e87-bb2c-b914bb95ce4a",
+      "name": "WTS Chat1",
+      "type": "n8n-nodes-wts.wtsChat",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        780
+      ],
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "operation": "getContactByPhone",
+        "phonenumber": "5511999999999"
+      },
+      "id": "fd57fc63-474a-4a3e-bb2b-5f86bde6346b",
+      "name": "WTS Chat2",
+      "type": "n8n-nodes-wts.wtsChat",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        780
+      ],
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "url": "https://api.wts.chat/core/v1/contact/a1c35537-ce66-418d-9a1f-9293a3f3a013",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0adeebc4-62a4-422e-b2ab-fe6e8a3c79aa",
+      "name": "obter_contato_por_id",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        860,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.wts.chat/core/v1/contact/phonenumber/5511999999999",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7ee926e3-5086-43a8-bd0f-1165352ca6a3",
+      "name": "obter_contato_por_telefone",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1060,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wts.chat/core/v1/contact/filter",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/*+json",
+        "body": " { \"email\": \"teste@teste.com\" } ",
+        "options": {}
+      },
+      "id": "cdec5e66-24fa-4993-9950-4159a33d123c",
+      "name": "filtra_por_email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.wts.chat/core/v1/contact/filter",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/*+json",
+        "body": " { \"instagram\": \"@testeinsta\" } ",
+        "options": {}
+      },
+      "id": "978252de-8ac4-42b0-98df-73f229c97bd9",
+      "name": "filtra_por_instagram",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        480,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.wts.chat/core/v1/contact/custom-field",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "f0e0edbe-3746-46e7-a62c-8f242c146e2f",
+      "name": "lista_campos_personalizados",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.wts.chat/core/v1/tag",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c346be50-6273-4c72-87c2-050c090570e8",
+      "name": "lista_etiquetas",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        920,
+        620
+      ]
+    },
+    {
+      "parameters": {
+        "method": "PUT",
+        "url": "https://api.wts.chat/core/v1/contact/76c9a973-f83d-45a4-9665-15b99b89e35e",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "pn_BrhZQfvFYhlufVyvwcGX6FDgXcYKXCpMXtBjVyrIlcA"
+            },
+            {
+              "name": "accept",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/*+json",
+        "body": " { \"fields\": [ \"Instagram\", \"Tags\", \"Name\", \"PhoneNumber\", \"Email\", \"Annotation\", \"Tags\", \"Utm\" ], \"name\": \"Individuo\", \"phoneNumber\": \"5551981403176\", \"email\": \"email@teste.com\", \"instagram\": \"@isntaind\", \"annotation\": \"anota\", \"tagIds\": [ \"fefb80d7-6103-48ea-bbd2-69f4199501ee\" ], \"tagNames\": [ \"string\" ], \"portfolioIds\": [ \"3fa85f64-5717-4562-b3fc-2c963f66afa6\" ], \"portfolioNames\": [ \"string\" ], \"sequenceIds\": [ \"3fa85f64-5717-4562-b3fc-2c963f66afa6\" ], \"status\": \"ACTIVE\", \"pictureUrl\": \"string\", \"customFields\": { \"additionalProp\": null }, \"metadata\": { \"additionalProp\": null }, \"utm\": { \"source\": \"1\", \"medium\": \"2\", \"campaign\": \"3\", \"content\": \"4\", \"headline\": \"string\", \"term\": \"5\", \"referralUrl\": \"string\" } } ",
+        "options": {}
+      },
+      "id": "7581385f-2f4e-45b6-aa21-2febecbd99f4",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1140,
+        620
+      ]
+    }
+  ],
+  "pinData": {
+    "obter_contato_por_id": [
+      {
+        "json": {
+          "id": "a1c35537-ce66-418d-9a1f-9293a3f3a013",
+          "createdAt": "2024-11-05T19:36:46.662411Z",
+          "updatedAt": "2024-11-05T19:36:46.662411Z",
+          "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+          "name": "teste",
+          "nameWhatsapp": null,
+          "nameInstagram": null,
+          "nameMessenger": null,
+          "phoneNumber": "+55|11884455771",
+          "phoneNumberFormatted": "(11) 88445-5771",
+          "email": "teste@teste.com",
+          "instagram": "testeinsta",
+          "messengerId": null,
+          "annotation": "",
+          "tagIds": [],
+          "tagNames": [],
+          "status": "ACTIVE",
+          "origin": "CREATED_BY_USER",
+          "importedAt": null,
+          "utm": null,
+          "customFields": {},
+          "portfolioIds": [],
+          "portfolioNames": [],
+          "metadata": null
+        }
+      }
+    ],
+    "obter_contato_por_telefone": [
+      {
+        "json": {
+          "id": "199cdf50-66e8-48fe-8e85-6111e4d5765d",
+          "createdAt": "2024-11-05T18:44:55.682794Z",
+          "updatedAt": "2024-11-05T18:44:55.682794Z",
+          "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+          "name": "teste1",
+          "nameWhatsapp": null,
+          "nameInstagram": null,
+          "nameMessenger": null,
+          "phoneNumber": "+55|11999999999",
+          "phoneNumberFormatted": "(11) 99999-9999",
+          "email": "teste1@teste.com",
+          "instagram": "insta1",
+          "messengerId": null,
+          "annotation": null,
+          "tagIds": [],
+          "tagNames": [],
+          "status": "ACTIVE",
+          "origin": "CREATED_BY_USER",
+          "importedAt": null,
+          "utm": null,
+          "customFields": {},
+          "portfolioIds": [],
+          "portfolioNames": [],
+          "metadata": null
+        }
+      }
+    ],
+    "filtra_por_email": [
+      {
+        "json": {
+          "items": [
+            {
+              "id": "a1c35537-ce66-418d-9a1f-9293a3f3a013",
+              "createdAt": "2024-11-05T19:36:46.662411Z",
+              "updatedAt": "2024-11-05T20:37:52.15373Z",
+              "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+              "name": "teste",
+              "nameWhatsapp": null,
+              "nameInstagram": null,
+              "nameMessenger": null,
+              "phoneNumber": "+55|11884455771",
+              "phoneNumberFormatted": "(11) 88445-5771",
+              "email": "teste@teste.com",
+              "instagram": "testeinsta",
+              "messengerId": null,
+              "annotation": "",
+              "tagIds": [],
+              "tagNames": [],
+              "status": "ACTIVE",
+              "origin": "CREATED_BY_USER",
+              "importedAt": null,
+              "utm": null,
+              "customFields": {},
+              "portfolioIds": [],
+              "portfolioNames": [],
+              "metadata": null
+            }
+          ],
+          "totalItems": 1,
+          "totalPages": 1,
+          "hasMorePages": false,
+          "pageNumber": 1,
+          "pageSize": 15,
+          "orderBy": "createdat",
+          "orderDirection": "ASCENDING"
+        }
+      }
+    ],
+    "lista_campos_personalizados": [
+      {
+        "json": {
+          "id": "0bb449a6-42d8-4abd-8b56-1f90596ed39f",
+          "createdAt": "2024-11-05T20:42:10.183913Z",
+          "updatedAt": "2024-11-05T20:42:10.183913Z",
+          "parentId": null,
+          "type": "STRING",
+          "entityType": "CONTACT",
+          "scopeId": null,
+          "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+          "name": "ID_INSTAGRAM",
+          "key": "id-instagram",
+          "position": 13,
+          "required": false,
+          "visible": true,
+          "isValueRange": false,
+          "options": null,
+          "children": null
+        }
+      },
+      {
+        "json": {
+          "id": "d93de780-1eb0-4b1f-9492-5543c8aa7bc7",
+          "createdAt": "2024-11-05T20:42:10.195961Z",
+          "updatedAt": "2024-11-05T20:42:10.195962Z",
+          "parentId": null,
+          "type": "STRING",
+          "entityType": "CONTACT",
+          "scopeId": null,
+          "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+          "name": "ID_ACTIVE",
+          "key": "id-active",
+          "position": 14,
+          "required": false,
+          "visible": true,
+          "isValueRange": false,
+          "options": null,
+          "children": null
+        }
+      },
+      {
+        "json": {
+          "id": "932506ce-3bd6-421c-afb1-d696763c5464",
+          "createdAt": "2024-11-05T20:42:10.21312Z",
+          "updatedAt": "2024-11-05T20:42:10.21312Z",
+          "parentId": null,
+          "type": "STRING",
+          "entityType": "CONTACT",
+          "scopeId": null,
+          "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+          "name": "ID_MANYCHAT",
+          "key": "id-manychat",
+          "position": 15,
+          "required": false,
+          "visible": true,
+          "isValueRange": false,
+          "options": null,
+          "children": null
+        }
+      }
+    ],
+    "lista_etiquetas": [
+      {
+        "json": {
+          "id": "fefb80d7-6103-48ea-bbd2-69f4199501ee",
+          "createdAt": "2024-10-24T16:54:54.389281Z",
+          "updatedAt": "2024-10-24T16:54:54.389282Z",
+          "name": "Venda",
+          "bgColor": "rgb(0, 200, 117)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "5005491c-6a8e-482c-af9c-142dd2c7c172",
+          "createdAt": "2024-10-24T16:54:54.389283Z",
+          "updatedAt": "2024-10-24T16:54:54.389283Z",
+          "name": "Oportunidade",
+          "bgColor": "rgb(255, 203, 0)",
+          "textColor": "#4F4F4F"
+        }
+      },
+      {
+        "json": {
+          "id": "4cedddd0-fb93-43e2-a32e-1cdae60b3042",
+          "createdAt": "2024-10-24T16:54:54.389283Z",
+          "updatedAt": "2024-10-24T16:54:54.389283Z",
+          "name": "Venda perdida",
+          "bgColor": "rgb(226, 68, 92)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "d77755fc-6405-41e1-9a0c-22cd347bf3bf",
+          "createdAt": "2024-10-24T16:54:54.389284Z",
+          "updatedAt": "2024-10-24T16:54:54.389284Z",
+          "name": "Pendente",
+          "bgColor": "rgb(0, 134, 192)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "e2fa2f7d-2109-41dd-8b00-4bb0ae3f5ace",
+          "createdAt": "2024-10-24T16:54:54.389284Z",
+          "updatedAt": "2024-10-24T16:54:54.389284Z",
+          "name": "Cliente",
+          "bgColor": "rgb(0, 134, 192)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "aa09d92c-eb36-43ef-9186-869643512e2e",
+          "createdAt": "2024-11-05T13:12:56.581842Z",
+          "updatedAt": "2024-11-05T13:12:56.581842Z",
+          "name": "roe25-participante",
+          "bgColor": "rgb(3, 127, 76)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "cadfdce2-74d9-4f1f-810b-b797807f7003",
+          "createdAt": "2024-11-05T13:12:40.466307Z",
+          "updatedAt": "2024-11-05T13:12:40.466307Z",
+          "name": "roe25-lead",
+          "bgColor": "rgb(3, 127, 76)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "66759f53-f131-4b58-86c6-a756e7699283",
+          "createdAt": "2024-11-05T20:30:36.682292Z",
+          "updatedAt": "2024-11-05T20:30:36.682292Z",
+          "name": "mdr-teste",
+          "bgColor": "black",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "aeacf902-59a2-40a9-b4b0-0ba1c6fc56ed",
+          "createdAt": "2024-11-05T13:08:16.723054Z",
+          "updatedAt": "2024-11-05T13:12:20.447322Z",
+          "name": "rich-abandono",
+          "bgColor": "rgb(189, 129, 110)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "05ae9f82-93ef-404b-920a-7a44b406693d",
+          "createdAt": "2024-11-05T13:06:57.974245Z",
+          "updatedAt": "2024-11-05T13:12:04.13056Z",
+          "name": "mdr-lead",
+          "bgColor": "rgb(253, 171, 61)",
+          "textColor": "#4F4F4F"
+        }
+      },
+      {
+        "json": {
+          "id": "be3cea8b-c279-4324-964d-6665544def3f",
+          "createdAt": "2024-11-05T13:07:16.906047Z",
+          "updatedAt": "2024-11-05T13:07:16.906047Z",
+          "name": "mdr-aluna",
+          "bgColor": "rgb(253, 171, 61)",
+          "textColor": "#4F4F4F"
+        }
+      },
+      {
+        "json": {
+          "id": "c6eb32dc-c548-4ad3-b625-d4ff9015aa3c",
+          "createdAt": "2024-11-05T13:07:28.655988Z",
+          "updatedAt": "2024-11-05T13:12:09.247825Z",
+          "name": "mdr-abandono",
+          "bgColor": "rgb(253, 171, 61)",
+          "textColor": "#4F4F4F"
+        }
+      },
+      {
+        "json": {
+          "id": "f331a9c3-8b80-469e-bc2e-85740670e14f",
+          "createdAt": "2024-11-05T13:08:01.520992Z",
+          "updatedAt": "2024-11-05T13:12:16.396975Z",
+          "name": "rich-aluna",
+          "bgColor": "rgb(189, 129, 110)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "b7fa3a18-46c6-40b8-a2b8-9d76c95e28ad",
+          "createdAt": "2024-11-05T13:08:27.725793Z",
+          "updatedAt": "2024-11-05T13:08:27.725794Z",
+          "name": "rich-lead",
+          "bgColor": "rgb(189, 129, 110)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "6d43cfaf-3d7d-4f75-9482-fdb80a7c92d7",
+          "createdAt": "2024-11-04T18:19:44.321171Z",
+          "updatedAt": "2024-11-04T18:19:44.321171Z",
+          "name": "Abandono",
+          "bgColor": "rgb(226, 68, 92)",
+          "textColor": "white"
+        }
+      },
+      {
+        "json": {
+          "id": "48dd006c-b640-405c-b25f-3294766ce014",
+          "createdAt": "2024-11-04T18:22:38.414864Z",
+          "updatedAt": "2024-11-04T18:22:38.414864Z",
+          "name": "Aprovada",
+          "bgColor": "rgb(0, 200, 117)",
+          "textColor": "white"
+        }
+      }
+    ],
+    "HTTP Request": [
+      {
+        "json": {
+          "id": "76c9a973-f83d-45a4-9665-15b99b89e35e",
+          "createdAt": "2024-11-05T18:42:05.564592Z",
+          "updatedAt": "2024-11-05T21:36:23.1722694Z",
+          "companyId": "90a2e3d3-9eed-47aa-9ff4-854a1f92d7b8",
+          "name": "Individuo",
+          "nameWhatsapp": null,
+          "nameInstagram": null,
+          "nameMessenger": null,
+          "phoneNumber": "+55|51981403176",
+          "phoneNumberFormatted": "(51) 98140-3176",
+          "email": "email@teste.com",
+          "instagram": "isntaind",
+          "messengerId": null,
+          "annotation": "anota",
+          "tagIds": [
+            "fefb80d7-6103-48ea-bbd2-69f4199501ee"
+          ],
+          "tagNames": [
+            "Venda"
+          ],
+          "status": "ACTIVE",
+          "origin": "CREATED_BY_USER",
+          "importedAt": null,
+          "utm": {
+            "source": "1",
+            "medium": "2",
+            "campaign": "3",
+            "content": "4",
+            "headline": null,
+            "term": "5",
+            "referralUrl": "string"
+          },
+          "customFields": {},
+          "portfolioIds": [],
+          "portfolioNames": [],
+          "metadata": {}
+        }
+      }
+    ]
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "updatedAt": "2024-11-07T21:11:06.352Z",
+  "versionId": "527d82db-cba2-4ef1-b717-462860c6bf02"
+}
