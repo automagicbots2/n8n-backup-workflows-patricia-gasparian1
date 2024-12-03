@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Edit Fields": {
       "main": [
@@ -43,11 +43,6 @@
             "index": 0
           }
         ]
-      ]
-    },
-    "Google Sheets": {
-      "main": [
-        []
       ]
     }
   },
@@ -985,22 +980,6 @@
     },
     {
       "parameters": {
-        "httpMethod": "POST",
-        "path": "aor24-teste-diagnostico",
-        "options": {}
-      },
-      "id": "6696b4a7-6a49-431f-9422-08902f88dc26",
-      "name": "Webhook",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 2,
-      "position": [
-        -100,
-        100
-      ],
-      "webhookId": "bff8487b-d160-46ff-86be-34f85c55d3f7"
-    },
-    {
-      "parameters": {
         "operation": "appendOrUpdate",
         "documentId": {
           "__rl": true,
@@ -1508,6 +1487,22 @@
           "name": "Google Sheets account"
         }
       }
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "aor24-teste-diagnostico",
+        "options": {}
+      },
+      "id": "6696b4a7-6a49-431f-9422-08902f88dc26",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        100
+      ],
+      "webhookId": "bff8487b-d160-46ff-86be-34f85c55d3f7"
     }
   ],
   "pinData": {},
@@ -1517,6 +1512,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-08-14T18:51:15.297Z",
-  "versionId": "f748d96a-296f-4847-a7d6-3a91b2167bd4"
+  "updatedAt": "2024-12-02T19:58:11.372Z",
+  "versionId": "fce9f9b7-490d-4f3f-a9e0-0b1319dac9c7"
 }
