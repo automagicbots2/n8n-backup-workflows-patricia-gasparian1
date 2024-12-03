@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "Edit Fields": {
       "main": [
@@ -588,6 +588,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 2,
-  "updatedAt": "2024-09-12T01:43:32.771Z",
+  "updatedAt": "2024-12-02T19:40:28.921Z",
   "versionId": "a5580955-b52d-4a67-86db-7035fc6eb94e"
 }
