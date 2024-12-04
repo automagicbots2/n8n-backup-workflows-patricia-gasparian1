@@ -388,13 +388,7 @@
     },
     "Relaciona \"Venda - UTM_Term\" com Listas1": {
       "main": [
-        [
-          {
-            "node": "Cria \"Status\"1",
-            "type": "main",
-            "index": 0
-          }
-        ]
+        []
       ]
     }
   },
@@ -426,7 +420,7 @@
             },
             {
               "name": "Sigla do Produto",
-              "value": "MCC"
+              "value": "RCM"
             },
             {
               "name": "Gateway de Pagamento",
@@ -1829,6 +1823,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-11-15T21:08:09.380Z",
-  "versionId": "a43c2a32-2195-4d59-8d24-eb89bbad7797"
+  "updatedAt": "2024-12-04T14:49:17.317Z",
+  "versionId": "2c2f68e7-f11f-48b5-9099-367a80f6968f"
 }
