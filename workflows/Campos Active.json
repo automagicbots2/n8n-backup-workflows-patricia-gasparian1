@@ -16,7 +16,7 @@
       "main": [
         [
           {
-            "node": "Cria \"Venda - UTM_Source\"1",
+            "node": "Cria \"Data de Cadastro\"",
             "type": "main",
             "index": 0
           }
@@ -385,11 +385,6 @@
           }
         ]
       ]
-    },
-    "Relaciona \"Venda - UTM_Term\" com Listas1": {
-      "main": [
-        []
-      ]
     }
   },
   "createdAt": "2024-09-07T19:07:33.813Z",
@@ -420,7 +415,7 @@
             },
             {
               "name": "Sigla do Produto",
-              "value": "RCM"
+              "value": "ROE"
             },
             {
               "name": "Gateway de Pagamento",
@@ -1823,6 +1818,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 0,
-  "updatedAt": "2024-12-04T14:49:17.317Z",
-  "versionId": "2c2f68e7-f11f-48b5-9099-367a80f6968f"
+  "updatedAt": "2024-12-06T11:43:14.365Z",
+  "versionId": "68630f60-7fa9-4294-a34a-c8f641bd2470"
 }
