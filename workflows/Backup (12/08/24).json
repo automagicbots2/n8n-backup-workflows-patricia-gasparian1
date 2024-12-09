@@ -220,31 +220,6 @@
     },
     {
       "parameters": {
-        "authentication": "oAuth2",
-        "operation": "delete",
-        "fileId": {
-          "__rl": true,
-          "value": "={{ $json[\"id\"] }}",
-          "mode": "id"
-        }
-      },
-      "name": "Deleta Arquivos de 3 Dias Antes",
-      "type": "n8n-nodes-base.googleDrive",
-      "position": [
-        -260,
-        2020
-      ],
-      "typeVersion": 1,
-      "id": "8a336f80-467a-4f2b-9072-17464178a070",
-      "credentials": {
-        "googleDriveOAuth2Api": {
-          "id": "1flOlUHRTAfETvyL",
-          "name": "Google Drive account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "filters": {},
         "requestOptions": {}
       },
@@ -259,7 +234,7 @@
       "credentials": {
         "n8nApi": {
           "id": "byPIy0fTwI5i9gDe",
-          "name": "n8n account"
+          "name": "[N8N] - Patricia Gasparian"
         }
       }
     },
@@ -284,7 +259,7 @@
       "credentials": {
         "n8nApi": {
           "id": "byPIy0fTwI5i9gDe",
-          "name": "n8n account"
+          "name": "[N8N] - Patricia Gasparian"
         }
       }
     },
@@ -361,6 +336,32 @@
       ],
       "typeVersion": 1,
       "id": "016529c3-e1a8-4e4e-a4c6-3b94a4c716b4"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "operation": "delete",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json[\"id\"] }}",
+          "mode": "id"
+        }
+      },
+      "name": "Deleta Arquivos de 3 Dias Antes",
+      "type": "n8n-nodes-base.googleDrive",
+      "position": [
+        -260,
+        2020
+      ],
+      "typeVersion": 1,
+      "id": "8a336f80-467a-4f2b-9072-17464178a070",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "1flOlUHRTAfETvyL",
+          "name": "Google Drive account"
+        }
+      },
+      "onError": "continueRegularOutput"
     }
   ],
   "pinData": {},
@@ -370,6 +371,6 @@
   "staticData": null,
   "tags": [],
   "triggerCount": 1,
-  "updatedAt": "2024-08-12T16:08:24.397Z",
-  "versionId": "2131d7a5-b6ff-4e2a-a549-3144976156aa"
+  "updatedAt": "2024-12-09T11:09:43.003Z",
+  "versionId": "c3ca73df-05fc-4d5c-bddf-967d3c54d0f5"
 }
